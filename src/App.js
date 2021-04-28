@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
-import Aside from "./components/Aside";
+
 import Footer from "./components/Footer";
 import Header from "./components/Header";
-import Main from "./components/Main";
+import Main from "./Pages/Main";
 import Nav from "./components/Nav";
+import { Route, Switch } from "react-router-dom";
 
 import {
 	fetchAssignments,
@@ -11,6 +12,8 @@ import {
 	deleteAssignment,
 	updateAssignment,
 } from "./services/api-service";
+import Assignment from "./Pages/Assignment";
+import Student from './Pages/Student';
 
 function App() {
 	const [assignmentsState, setAssignmentsState] = useState({ assignments: [] });
@@ -55,12 +58,33 @@ function App() {
 			<div className="container">
 				<Header />
 				<Nav />
-				<Aside handleAdd={handleAdd} />
-				<Main
-					assignments={assignmentsState.assignments}
-					handleDelete={handleDelete}
-					handleUpdate={handleUpdate}
-				/>
+				<Switch>
+            <Route
+              exact path='/'
+              render={() => (
+                		<Main
+					            assignments={assignmentsState.assignments}
+					            handleDelete={handleDelete}
+					            handleUpdate={handleUpdate}
+				            />
+              )}
+
+            />
+            <Route 
+              exact path='/assignment'
+              render={() => (
+                <Assignment />
+              )}
+          />
+          <Route 
+            expath path ='/student/:id'
+            render = {() => (
+              <Student />
+            )}
+          />
+  
+        </Switch>
+		
 				<Footer />
 			</div>
 		</div>

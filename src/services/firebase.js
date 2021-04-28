@@ -1,5 +1,3 @@
-//Garrett's Firebase from Project 3
-
 
 //TODO: Import the firebase core module
 import firebase from 'firebase/app';
@@ -7,15 +5,14 @@ import firebase from 'firebase/app';
 import 'firebase/auth';
 
 
-
 const firebaseConfig = {
-    apiKey: "AIzaSyB-6pC2N1ZxwpnC_ebJ_gqRnlMO1gzCZW4",
-    authDomain: "peakbagger-706c6.firebaseapp.com",
-    projectId: "peakbagger-706c6",
-    storageBucket: "peakbagger-706c6.appspot.com",
-    messagingSenderId: "521335896187",
-    appId: "1:521335896187:web:1f62018acf3a90ab8a4ade",
-    //measurementId: "G-GB7RGHF9ZC"
+    apiKey: "AIzaSyALlAbsYMW_71N4BGYjhzc8zT9VfEJitIU",
+    authDomain: "gradebook-f94da.firebaseapp.com",
+    projectId: "gradebook-f94da",
+    storageBucket: "gradebook-f94da.appspot.com",
+    messagingSenderId: "222203110555",
+    appId: "1:222203110555:web:fb869d441cc790d915123e",
+    measurementId: "G-5W1MQ9X77X"
   };
 
 
