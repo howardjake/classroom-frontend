@@ -59,22 +59,21 @@ function App() {
 				<Header />
 				<Nav />
 				<Switch>
-            <Route
-              exact path='/'
-              render={() => (
-                		<Main
-					            assignments={assignmentsState.assignments}
-					            handleDelete={handleDelete}
-					            handleUpdate={handleUpdate}
-				            />
+          <Route
+            exact path='/'
+            render={() => (
+                <Main
+					        assignments={assignmentsState.assignments}
+					        handleDelete={handleDelete}
+					        handleUpdate={handleUpdate}
+				        />
               )}
-
-            />
-            <Route 
-              exact path='/assignment'
-              render={() => (
-                <Assignment />
-              )}
+          />
+          <Route 
+            exact path='/assignment'
+            render={() => (
+              <Assignment />
+            )}
           />
           <Route 
             expath path ='/student/:id'
@@ -82,9 +81,7 @@ function App() {
               <Student />
             )}
           />
-  
         </Switch>
-		
 				<Footer />
 			</div>
 		</div>
