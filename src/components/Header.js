@@ -1,3 +1,5 @@
+// Header where we can add firebase login
+
 function Header(props) {
     return (
       <header>

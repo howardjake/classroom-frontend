@@ -1,4 +1,4 @@
-//Inputs for form for individual student assignments
+//Add inputs for form for individual student assignments
 
 function Input({ 
   name, 
