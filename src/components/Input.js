@@ -9,9 +9,7 @@ function Input({
   handleChange }) {
     return (
       <>
-      
         <label htmlFor={name}>{title}</label>
-       
         <input
           id={name}
           name={name}

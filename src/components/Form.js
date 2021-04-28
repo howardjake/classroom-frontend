@@ -1,5 +1,6 @@
 //Form to add data
 
+
 import { useState, useEffect } from 'react';
 import Input from './Input.js';
 
@@ -40,7 +41,6 @@ function Form(props) {
   }
     return (
       <form onSubmit={handleSubmit}>
-          <h2>Dispayed Form</h2>
         <Input
           handleChange={handleChange}
           name="title"
@@ -65,7 +65,7 @@ function Form(props) {
           value={formState.phone}
           id="phone"
        />
-       <input type="submit" value={props.editFormVisible ? 'Update Form' : 'Add Form'} />
+       <input type="submit" value={props.editFormVisible ? 'Update' : 'Add'} />
       </form>
     );
   }

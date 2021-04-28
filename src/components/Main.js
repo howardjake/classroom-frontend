@@ -1,3 +1,5 @@
+
+
 import Notices from './Notices.js';
 
 function Main({ notices, handleDelete, handleUpdate }) {

@@ -1,6 +1,9 @@
+
+//Daniels Notice Lab
+
 // TODO: eventually change this to heroku
 const BASE_URL = 'http://localhost:3000/notices'; 
-//swao notices to assignments
+//const BASE_URL = 'http://localhost:3000/assignments'; 
 
 function fetchNotices() {
     return fetch(BASE_URL).then(res => res.json());
@@ -40,3 +43,4 @@ export {
     deleteNotice,
     updateNotice
 }
+
