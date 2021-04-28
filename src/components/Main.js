@@ -1,13 +1,13 @@
 
 
-import Notices from './Notices.js';
+import Assignments from './Assignments.js';
 
-function Main({ notices, handleDelete, handleUpdate }) {
+function Main({ assignments, handleDelete, handleUpdate }) {
     return (
       <main>
           <h1>Main Page Where We Want A Table Imported</h1>
-        <Notices 
-          notices={notices}
+        <Assignments 
+          assignments={assignments}
           handleDelete={handleDelete}
           handleUpdate={handleUpdate}
         />

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Form from './Form';
 
-function Notice({ notice, handleDelete, handleUpdate }) {
+function Assignment({ assignment, handleDelete, handleUpdate }) {
 
     const [editFormVisible, setEditFormVisible] = useState(false);
 
@@ -17,14 +17,14 @@ function Notice({ notice, handleDelete, handleUpdate }) {
             editFormVisible={editFormVisible}
             toggleForm={toggleForm}
             handleUpdate={handleUpdate} 
-            notice={notice}
+            assignment={assignment}
             />
           :
-          <div className="notice">
-            <h3>{notice.title}</h3>
-            <p>{notice.author}</p>
-            <small>{notice.phone}</small>
-            <button onClick={() => handleDelete(notice.id)}>X</button>
+          <div className="assignment">
+            <h3>{assignment.name}</h3>
+            <p>{assignment.grade}</p>
+            <small>{assignment.due_date}</small>
+            <button onClick={() => handleDelete(assignment.id)}>X</button>
             <button onClick={toggleForm}>Edit</button>
           </div>
         }
@@ -32,4 +32,4 @@ function Notice({ notice, handleDelete, handleUpdate }) {
     );
 }
 
-export default Notice;
+export default Assignment;

@@ -6,35 +6,35 @@ import Main from './components/Main';
 import Nav from './components/Nav';
 
 import { 
-  fetchNotices, 
-  createNotice, 
-  deleteNotice, 
-  updateNotice } from './services/api-service';
+  fetchAssignments, 
+  createAssignment, 
+  deleteAssignment, 
+  updateAssignment } from './services/api-service';
 
 function App() {
-  const [noticesState, setNoticesState] = useState({ notices: []});
+  const [assignmentsState, setAssignmentsState] = useState({ assignments: []});
 
   useEffect(() => {
-    async function getNotices() {
-      const notices = await fetchNotices();
-      setNoticesState({ notices });
+    async function getAssignments() {
+      const assignments = await fetchAssignments();
+      setAssignmentsState({ assignments });
     }
-    getNotices();
+    getAssignments();
   }, []);
 
   async function handleAdd(formInputs) {
     try {
-      const notices = await createNotice(formInputs);
-      setNoticesState({ notices });
+      const assignments = await createAssignment(formInputs);
+      setAssignmentsState({ assignments });
     } catch (error) {
       console.log(error);
     }
   }
 
-  async function handleDelete(noticeId) {
+  async function handleDelete(assignmentId) {
     try {
-      const notices = await deleteNotice(noticeId);
-      setNoticesState({ notices });
+      const assignments = await deleteAssignment(assignmentId);
+      setAssignmentsState({ assignments });
     } catch (error) {
       console.log(error);
     }
@@ -42,8 +42,8 @@ function App() {
 
   async function handleUpdate(formInputs) {
     try {
-      const notices = await updateNotice(formInputs);
-      setNoticesState({ notices });
+      const assignments = await updateAssignment(formInputs);
+      setAssignmentsState({ assignments });
     } catch (error) {
       console.log(error)
     }
@@ -55,7 +55,7 @@ function App() {
         <Header />
         <Aside handleAdd={handleAdd} />
         <Main 
-          notices={noticesState.notices}
+          assignments={assignmentsState.assignments}
           handleDelete={handleDelete}
           handleUpdate={handleUpdate} 
         />

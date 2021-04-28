@@ -1,15 +1,15 @@
-//Add inputs for form for individual student assignments
+//Add Inputs for form for individual student assignments
 
 function Input({ 
   name, 
-  title, 
+  grade, 
   type, 
   value, 
   placeholder, 
   handleChange }) {
     return (
       <>
-        <label htmlFor={name}>{title}</label>
+        <label htmlFor={name}>{grade}</label>
         <input
           id={name}
           name={name}

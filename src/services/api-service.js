@@ -2,14 +2,13 @@
 //Daniels Notice Lab
 
 // TODO: eventually change this to heroku
-const BASE_URL = 'http://localhost:3000/notices'; 
-//const BASE_URL = 'http://localhost:3000/assignments'; 
+const BASE_URL = 'http://localhost:3000/assignments';  
 
-function fetchNotices() {
+function fetchAssignments() {
     return fetch(BASE_URL).then(res => res.json());
 }
 
-function createNotice(data) {
+function createAssignment(data) {
     return fetch(BASE_URL, {
         method: 'POST',
         headers: {
@@ -20,27 +19,27 @@ function createNotice(data) {
 }
 
 
-function deleteNotice(id) {
+function deleteAssignment(id) {
     return fetch(`${BASE_URL}/${id}`, {
         method: 'DELETE'
     }).then(res => res.json());
 }
 
 
-function updateNotice({ title, author, phone, id }) {
+function updateAssignment({ name, grade, due_date, id }) {
     return fetch(`${BASE_URL}/${id}`, {
         method: 'PUT',
         headers: {
           'Content-type': 'Application/json'
         },
-        body: JSON.stringify({ title, author, phone })
+        body: JSON.stringify({ name, grade, due_date })
       }).then(res => res.json());
 }
 
 export {
-    fetchNotices,
-    createNotice,
-    deleteNotice,
-    updateNotice
+    fetchAssignments,
+    createAssignment,
+    deleteAssignment,
+    updateAssignment
 }
 
