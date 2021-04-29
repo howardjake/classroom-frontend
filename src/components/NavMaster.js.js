@@ -2,9 +2,9 @@ import AssignmentMasterList from "./AssignmentMasterList";
 
 function NavMaster({ assignment_masters }) {
 	return (
-		<nav>
+		<div>
 			<AssignmentMasterList assignment_masters={assignment_masters} />
-		</nav>
+		</div>
 	);
 }
 

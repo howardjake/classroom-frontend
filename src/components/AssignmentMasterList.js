@@ -6,7 +6,7 @@ function AssignmentMasterList({ assignment_masters }) {
 		<>
 		{assignment_masters.map((assignment_master, idx) => {
 				return (
-					<Link id={idx} to={`/assignment_masters/${assignment_masters.id}`}>
+					<Link id={idx} to={`/assignment_masters/${assignment_master.id}`}>
 						<p>{assignment_master.name}</p>
 					</Link>
 				);
@@ -15,3 +15,5 @@ function AssignmentMasterList({ assignment_masters }) {
 	);
 }
 export default AssignmentMasterList;
+
+

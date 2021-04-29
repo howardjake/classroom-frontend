@@ -79,7 +79,7 @@ const [assignment_mastersState, setAssignment_MastersState] = useState({ assignm
 			<div className="container">
 				<Header />
 				<Nav students={studentsState.students} />
-				<NavMaster assignment_masters={assignment_mastersState.assignment_masters} />
+			
 				
 
 				<Switch>
@@ -101,6 +101,7 @@ const [assignment_mastersState, setAssignment_MastersState] = useState({ assignm
 
 					<Route expath path="/student/:id" render={() => <Student />} />
 				</Switch>
+				<NavMaster assignment_masters={assignment_mastersState.assignment_masters} />
 				<Footer />
 			</div>
 		</div>

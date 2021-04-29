@@ -1,5 +1,3 @@
-
-
 import AssignmentEdit from './AssignmentEdit.js';
 
 function AssignmentsList({ assignments, handleDelete, }) {
