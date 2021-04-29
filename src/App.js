@@ -78,7 +78,15 @@ function App() {
 						)}
 					/>
 					<Route exact path="/assignment" render={() => <Assignment />} />
-					<Route expath path="/student/:id" render={() => <Student />} />
+					<Route
+						path="/student/:id"
+						render={() => (
+							<Student
+								students={studentsState.students}
+								assignments={assignmentsState.assignments}
+							/>
+						)}
+					/>
 				</Switch>
 				<Footer />
 			</div>
