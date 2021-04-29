@@ -63,16 +63,17 @@ function App() {
             exact path='/'
             render={() => (
                 <Main
-					        assignments={assignmentsState.assignments}
-					        handleDelete={handleDelete}
-					        handleUpdate={handleUpdate}
+					        
 				        />
               )}
           />
           <Route 
             exact path='/assignment'
             render={() => (
-              <Assignment />
+              <Assignment 
+              assignments={assignmentsState.assignments}
+					        handleDelete={handleDelete}
+					        handleUpdate={handleUpdate}/>
             )}
           />
           <Route 
