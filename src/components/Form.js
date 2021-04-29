@@ -8,6 +8,7 @@ function Form(props) {
     const [formState, setFormState] = useState({
       name:'',
       description:'',
+      course_id: '1'
     });
 
   useEffect(() => {
@@ -16,7 +17,6 @@ function Form(props) {
       setFormState({
         name,
         description,
-        id
       });
     }
   }, [props.editFormVisible, props.notice]);
@@ -46,6 +46,7 @@ function Form(props) {
           type="text"
           value={formState.name}
           id="name"
+          hidden="false"
          />
          <Input
            handleChange={handleChange}
@@ -54,6 +55,16 @@ function Form(props) {
            type="text"
            value={formState.description}
            id="grade"
+           hidden
+        />
+        <label htmlFor="course_id"></label>
+       <input
+       hidden
+          id="course_id"
+          name="course_id"
+          type="number"
+          value="1"
+          onChange={handleChange}
         />
        <input type="submit" value={props.editFormVisible ? 'Update' : 'Add'} />
       </form>

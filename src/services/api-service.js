@@ -8,6 +8,9 @@ const STUDENT_URL = "http://localhost:3000/students";
 function fetchAssignments() {
 	return fetch(BASE_URL).then((res) => res.json());
 }
+function fetchAssignmentMasters() {
+	return fetch(MASTERS_URL).then((res) => res.json());
+}
 function fetchStudents() {
 	return fetch(STUDENT_URL).then((res) => res.json());
 }
@@ -44,4 +47,5 @@ export {
 	deleteAssignment,
 	updateAssignment,
 	fetchStudents,
+	fetchAssignmentMasters
 };
