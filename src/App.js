@@ -11,12 +11,14 @@ import {
 	createAssignment,
 	deleteAssignment,
 	updateAssignment,
+	fetchStudents,
 } from "./services/api-service";
 import Assignment from "./Pages/Assignment";
-import Student from './Pages/Student';
+import Student from "./Pages/Student";
 
 function App() {
 	const [assignmentsState, setAssignmentsState] = useState({ assignments: [] });
+	const [studentsState, setStudentsState] = useState({ students: [] });
 
 	useEffect(() => {
 		async function getAssignments() {
@@ -24,6 +26,11 @@ function App() {
 			setAssignmentsState({ assignments });
 		}
 		getAssignments();
+		async function getStudents() {
+			const students = await fetchStudents();
+			setStudentsState({ students });
+		}
+		getStudents();
 	}, []);
 
 	async function handleAdd(formInputs) {
@@ -57,31 +64,22 @@ function App() {
 		<div className="App">
 			<div className="container">
 				<Header />
-				<Nav />
+				<Nav students={studentsState.students} />
 				<Switch>
-          <Route
-            exact path='/'
-            render={() => (
-                <Main
-					        assignments={assignmentsState.assignments}
-					        handleDelete={handleDelete}
-					        handleUpdate={handleUpdate}
-				        />
-              )}
-          />
-          <Route 
-            exact path='/assignment'
-            render={() => (
-              <Assignment />
-            )}
-          />
-          <Route 
-            expath path ='/student/:id'
-            render = {() => (
-              <Student />
-            )}
-          />
-        </Switch>
+					<Route
+						exact
+						path="/"
+						render={() => (
+							<Main
+								assignments={assignmentsState.assignments}
+								handleDelete={handleDelete}
+								handleUpdate={handleUpdate}
+							/>
+						)}
+					/>
+					<Route exact path="/assignment" render={() => <Assignment />} />
+					<Route expath path="/student/:id" render={() => <Student />} />
+				</Switch>
 				<Footer />
 			</div>
 		</div>

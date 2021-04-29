@@ -1,9 +1,9 @@
 import StudentList from "./StudentList";
 
-function Nav(props) {
+function Nav({ students }) {
 	return (
 		<nav>
-			<StudentList />
+			<StudentList students={students} />
 		</nav>
 	);
 }
