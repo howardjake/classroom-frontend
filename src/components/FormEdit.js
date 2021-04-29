@@ -1,4 +1,7 @@
-//Old (Assignment.js)
+/*
+
+This can be a page to edit individual assignments. Need not pull from the form for inputting a master assignment.
+
 import { useState } from 'react';
 import Form from './Form';
 
@@ -32,5 +35,4 @@ function AssignmentEdit({ assignment, handleDelete, handleUpdate }) {
       </>
     );
 }
-
-export default AssignmentEdit;
+*/

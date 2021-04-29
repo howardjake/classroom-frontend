@@ -1,4 +1,4 @@
-//Form to add assignment data
+//Form to add assignment for class
 
 
 import { useState, useEffect } from 'react';

@@ -5,14 +5,15 @@ import Header from "./components/Header";
 import Main from "./Pages/Main";
 import Nav from "./components/Nav";
 import NavMaster from './components/NavMaster.js'
-import AssignmentListView from "./components/AssignmentListView"
+//import AssignmentListView from "./components/AssignmentListView"
+import NewAssignmentListView from "./components/NewAssignmentListView"
 import { Route, Switch } from "react-router-dom";
 
 import {
 	fetchAssignments,
 	createAssignment,
-	deleteAssignment,
-	updateAssignment,
+	//deleteAssignment,
+	//updateAssignment,
 	fetchStudents,
 	fetchAssignmentMasters
 } from "./services/api-service";
@@ -54,7 +55,7 @@ const [assignment_mastersState, setAssignment_MastersState] = useState({ assignm
 			console.log(error);
 		}
 	}
-
+	/*
 	async function handleDelete(assignmentId) {
 		try {
 			const assignments = await deleteAssignment(assignmentId);
@@ -72,6 +73,7 @@ const [assignment_mastersState, setAssignment_MastersState] = useState({ assignm
 			console.log(error);
 		}
 	}
+	*/
 
 
 	return (
@@ -91,7 +93,7 @@ const [assignment_mastersState, setAssignment_MastersState] = useState({ assignm
 							/>
 						)}
 					/>
-					<Route exact path="/assignment" render={() => <AssignmentListView assignments={assignmentsState.assignments}
+					<Route exact path="/assignments" render={() => <NewAssignmentListView assignments={assignmentsState.assignments}
 					/>	} />
 
 					<Route exact path="/assignment_masters" render={() => <AssignmentForm 
