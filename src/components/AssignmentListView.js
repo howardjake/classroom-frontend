@@ -2,9 +2,9 @@ import AssignmentList from "./AssignmentList";
 
 function Aside({ assignments }) {
 	return (
-		<nav>
+		<main>
 			<AssignmentList assignments={assignments} />
-		</nav>
+		</main>
 	);
 }
 

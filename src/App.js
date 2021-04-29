@@ -79,8 +79,10 @@ function App() {
 							/>
 						)}
 					/>
-					<Route exact path="/assignment" render={() => <Aside assignments={assignmentsState.assignments} />
-								} />
+					<Route exact path="/assignment" render={() => <Aside assignments={assignmentsState.assignments} 
+						handleDelete={handleDelete}
+						handleUpdate={handleUpdate}
+					/>	} />
 					<Route expath path="/student/:id" render={() => <Student />} />
 				</Switch>
 				<Footer />
@@ -90,3 +92,4 @@ function App() {
 }
 
 export default App;
+							
