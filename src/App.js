@@ -4,6 +4,7 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Main from "./Pages/Main";
 import Nav from "./components/Nav";
+import NavMaster from './components/NavMaster.js'
 import AssignmentListView from "./components/AssignmentListView"
 import { Route, Switch } from "react-router-dom";
 
@@ -13,19 +14,29 @@ import {
 	deleteAssignment,
 	updateAssignment,
 	fetchStudents,
+	fetchAssignmentMasters
 } from "./services/api-service";
 import AssignmentForm from "./Pages/AssignmentForm";
 import Student from "./Pages/Student";
 
 function App() {
 const [assignmentsState, setAssignmentsState] = useState({ assignments: [] });
-	const [studentsState, setStudentsState] = useState({ students: [] });
+const [studentsState, setStudentsState] = useState({ students: [] });
+const [assignment_mastersState, setAssignment_MastersState] = useState({ assignment_masters: [] });
 
 	useEffect(() => {
 		async function getAssignments() {
 			const assignments = await fetchAssignments();
 			setAssignmentsState({ assignments });
 		}
+		getAssignments();
+
+		async function getAssignment_Masters() {
+			const assignment_masters = await fetchAssignmentMasters();
+			setAssignment_MastersState({ assignment_masters });
+		}
+		getAssignment_Masters();
+
 		getAssignments();
 		async function getStudents() {
 			const students = await fetchStudents();
@@ -68,6 +79,7 @@ const [assignmentsState, setAssignmentsState] = useState({ assignments: [] });
 			<div className="container">
 				<Header />
 				<Nav students={studentsState.students} />
+				<NavMaster assignment_masters={assignment_mastersState.assignment_masters} />
 				
 
 				<Switch>
