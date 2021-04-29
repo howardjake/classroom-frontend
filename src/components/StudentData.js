@@ -1,8 +1,8 @@
 function StudentData({ student, assignments }) {
 	return (
 		<div>
-			<h2>{student.name}</h2>
-			<p>{student.email}</p>
+			<h2>{student?.name}</h2>
+			<p>{student?.email}</p>
 			<table>
 				<tr>
 					<th>Assignemnt</th>
