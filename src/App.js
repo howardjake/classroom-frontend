@@ -48,6 +48,7 @@ const [assignment_mastersState, setAssignment_MastersState] = useState({ assignm
 	}, []);
 
 	async function handleAdd(formInputs) {
+		console.log(formInputs)
 		try {
 			const assignments = await createAssignment(formInputs);
 			setAssignmentsState({ assignments });

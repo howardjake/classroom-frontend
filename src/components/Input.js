@@ -6,11 +6,13 @@ function Input({
   type, 
   value, 
   placeholder, 
-  handleChange }) {
+  handleChange,
+  hidden }) {
     return (
       <>
         <label htmlFor={name}>{description}</label>
         <input
+        
           id={name}
           name={name}
           type={type}
