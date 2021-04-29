@@ -7,6 +7,8 @@ import Nav from "./components/Nav";
 import Aside from "./components/AssignmentListView"
 import { Route, Switch } from "react-router-dom";
 
+import { auth } from "./services/firebase"
+
 import {
 	fetchAssignments,
 	createAssignment,
@@ -18,7 +20,9 @@ import Assignment from "./Pages/Assignment";
 import Student from "./Pages/Student";
 
 function App() {
-	const [assignmentsState, setAssignmentsState] = useState({ assignments: [] });
+	const [assignmentsState, setAssignmentsState] = useState({
+		user: null, 
+		assignments: [] });
 	const [studentsState, setStudentsState] = useState({ students: [] });
 
 	useEffect(() => {
@@ -32,6 +36,24 @@ function App() {
 			setStudentsState({ students });
 		}
 		getStudents();
+
+		const cancelSub = auth.onAuthStateChanged(user => {
+			if (user) {
+			  setAssignmentsState(prevState => ({
+				...prevState, 
+				user,
+			  }));
+			} else {
+			  setAssignmentsState(prevState => ({
+				...prevState,
+				user,
+			  })); 
+			}
+		  });
+		  
+		  return function() {
+			cancelSub();
+		  }
 		
 	}, []);
 
