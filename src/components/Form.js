@@ -15,7 +15,7 @@ function Form(props) {
       const {name, description, id} = props.notice;
       setFormState({
         name,
-       description,
+        description,
         id
       });
     }
