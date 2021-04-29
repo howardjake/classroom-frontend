@@ -4,7 +4,7 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Main from "./Pages/Main";
 import Nav from "./components/Nav";
-import Aside from "./components/AssignmentListView"
+import AssignmentListView from "./components/AssignmentListView"
 import { Route, Switch } from "react-router-dom";
 
 import {
@@ -14,11 +14,11 @@ import {
 	updateAssignment,
 	fetchStudents,
 } from "./services/api-service";
-import Assignment from "./Pages/Assignment";
+import AssignmentForm from "./Pages/AssignmentForm";
 import Student from "./Pages/Student";
 
 function App() {
-	const [assignmentsState, setAssignmentsState] = useState({ assignments: [] });
+const [assignmentsState, setAssignmentsState] = useState({ assignments: [] });
 	const [studentsState, setStudentsState] = useState({ students: [] });
 
 	useEffect(() => {
@@ -62,6 +62,7 @@ function App() {
 		}
 	}
 
+
 	return (
 		<div className="App">
 			<div className="container">
@@ -75,14 +76,17 @@ function App() {
 						path="/"
 						render={() => (
 							<Main
-								
 							/>
 						)}
 					/>
-					<Route exact path="/assignment" render={() => <Aside assignments={assignmentsState.assignments} 
-						handleDelete={handleDelete}
-						handleUpdate={handleUpdate}
+					<Route exact path="/assignment" render={() => <AssignmentListView assignments={assignmentsState.assignments}
 					/>	} />
+
+					<Route exact path="/assignment_masters" render={() => <AssignmentForm 
+					assignments={assignmentsState.assignments}
+					handleAdd={handleAdd}
+					 />	} />
+
 					<Route expath path="/student/:id" render={() => <Student />} />
 				</Switch>
 				<Footer />
@@ -92,4 +96,3 @@ function App() {
 }
 
 export default App;
-							

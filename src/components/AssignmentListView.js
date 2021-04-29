@@ -1,6 +1,6 @@
 import AssignmentList from "./AssignmentList";
-
-function Aside({ assignments }) {
+//old aside function
+function AssignmentListView({ assignments }) {
 	return (
 		<main>
 			<AssignmentList assignments={assignments} />
@@ -8,5 +8,4 @@ function Aside({ assignments }) {
 	);
 }
 
-export default Aside;
-
+export default AssignmentListView;

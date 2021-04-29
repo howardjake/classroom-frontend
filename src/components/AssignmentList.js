@@ -1,20 +1,19 @@
 
 
-import Assignment from './Assignment.js';
+import AssignmentEdit from './AssignmentEdit.js';
 
-function Assignments({ assignments, handleDelete, handleUpdate }) {
+function AssignmentsList({ assignments, handleDelete, }) {
     return (
       <div>
         {assignments.map(assignment => 
-          <Assignment 
+          <AssignmentEdit 
             key={assignment.id} 
             assignment={assignment}
             handleDelete={handleDelete}
-            handleUpdate={handleUpdate}
           />
         )}
       </div>
     );
 }
-
-export default Assignments;
+//copy for assignment masters display
+export default AssignmentsList;

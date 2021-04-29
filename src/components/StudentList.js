@@ -1,3 +1,4 @@
+
 import { Link } from "react-router-dom";
 
 function StudentList({ students }) {
@@ -14,4 +15,3 @@ function StudentList({ students }) {
 	);
 }
 export default StudentList;
-

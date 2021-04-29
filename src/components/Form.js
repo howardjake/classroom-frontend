@@ -7,17 +7,15 @@ import Input from './Input.js';
 function Form(props) {
     const [formState, setFormState] = useState({
       name:'',
-      grade:'',
-      due_date:''
+      description:'',
     });
 
   useEffect(() => {
     if(props.editFormVisible) {
-      const {name, grade, due_date, id} = props.notice;
+      const {name, description, id} = props.notice;
       setFormState({
         name,
-        grade,
-        due_date,
+       description,
         id
       });
     }
@@ -51,20 +49,12 @@ function Form(props) {
          />
          <Input
            handleChange={handleChange}
-           name="grade"
-           placeholder="Assignment Grade"
+           name="description"
+           placeholder="Assignment Description"
            type="text"
-           value={formState.grade}
+           value={formState.description}
            id="grade"
         />
-        <Input
-          handleChange={handleChange}
-          name="due_date"
-          placeholder="Due Date"
-          type="text"
-          value={formState.due_date}
-          id="due_date"
-       />
        <input type="submit" value={props.editFormVisible ? 'Update' : 'Add'} />
       </form>
     );

@@ -1,7 +1,8 @@
+//Old (Assignment.js)
 import { useState } from 'react';
 import Form from './Form';
 
-function Assignment({ assignment, handleDelete, handleUpdate }) {
+function AssignmentEdit({ assignment, handleDelete, handleUpdate }) {
 
     const [editFormVisible, setEditFormVisible] = useState(false);
 
@@ -32,4 +33,4 @@ function Assignment({ assignment, handleDelete, handleUpdate }) {
     );
 }
 
-export default Assignment;
+export default AssignmentEdit;

@@ -2,14 +2,14 @@
 
 function Input({ 
   name, 
-  grade, 
+  description, 
   type, 
   value, 
   placeholder, 
   handleChange }) {
     return (
       <>
-        <label htmlFor={name}>{grade}</label>
+        <label htmlFor={name}>{description}</label>
         <input
           id={name}
           name={name}

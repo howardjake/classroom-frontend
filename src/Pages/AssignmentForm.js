@@ -1,13 +1,12 @@
 import Form from "../components/Form"
 
 
-function Assignment (props) {
+function AssignmentForm (props) {
     return (
         <div>
             <Form />
-            
         </div>
     )
 }
 
- export default Assignment;
+ export default AssignmentForm;
