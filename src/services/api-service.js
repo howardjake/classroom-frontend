@@ -27,13 +27,13 @@ function deleteAssignment(id) {
 	}).then((res) => res.json());
 }
 
-function updateAssignment({ name, grade, due_date, id }) {
+function updateAssignment({ id, grade }) {
 	return fetch(`${BASE_URL}/${id}`, {
 		method: "PUT",
 		headers: {
 			"Content-type": "Application/json",
 		},
-		body: JSON.stringify({ name, grade, due_date }),
+		body: JSON.stringify({ grade }),
 	}).then((res) => res.json());
 }
 

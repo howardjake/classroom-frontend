@@ -84,6 +84,7 @@ function App() {
 							<Student
 								students={studentsState.students}
 								assignments={assignmentsState.assignments}
+								handleUpdate={handleUpdate}
 							/>
 						)}
 					/>
