@@ -2,17 +2,20 @@
 
 function Input({ 
   name, 
-  grade, 
+  description, 
   type, 
   value, 
   placeholder, 
-  handleChange }) {
+  handleChange,
+  hidden }) {
     return (
       <>
-        <label htmlFor={name}>{grade}</label>
+        <label htmlFor={name}>{description}</label>
         <input
+        
           id={name}
           name={name}
+          description={description}
           type={type}
           value={value}
           onChange={handleChange}

@@ -2,17 +2,21 @@
 
 // TODO: eventually change this to heroku
 const BASE_URL = "http://localhost:3000/assignments";
+const MASTERS_URL = "http://localhost:3000/assignment_masters";
 const STUDENT_URL = "http://localhost:3000/students";
 
 function fetchAssignments() {
 	return fetch(BASE_URL).then((res) => res.json());
 }
+function fetchAssignmentMasters() {
+	return fetch(MASTERS_URL).then((res) => res.json());
+}
 function fetchStudents() {
 	return fetch(STUDENT_URL).then((res) => res.json());
 }
 
-function createAssignment(data) {
-	return fetch(BASE_URL, {
+function createAssignmentMasters(data) {
+	return fetch(MASTERS_URL, {
 		method: "POST",
 		headers: {
 			"Content-type": "Application/json",
@@ -21,8 +25,8 @@ function createAssignment(data) {
 	}).then((res) => res.json());
 }
 
-function deleteAssignment(id) {
-	return fetch(`${BASE_URL}/${id}`, {
+function deleteAssignmentMasters(id) {
+	return fetch(`${MASTERS_URL}/${id}`, {
 		method: "DELETE",
 	}).then((res) => res.json());
 }
@@ -39,8 +43,9 @@ function updateAssignment({ id, grade }) {
 
 export {
 	fetchAssignments,
-	createAssignment,
-	deleteAssignment,
+	createAssignmentMasters,
+	deleteAssignmentMasters,
 	updateAssignment,
 	fetchStudents,
+	fetchAssignmentMasters
 };

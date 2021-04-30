@@ -1,10 +1,9 @@
-import { useState, useEffect } from "react";
-import { auth } from "../services/firebase";
+  
 import Welcome from "../components/Welcome.js";
 
 
 
-function Main({ assignments, handleDelete, handleUpdate }) {
+function Main(props) {
 	return (
 		<main>
 			<Welcome />
@@ -14,5 +13,3 @@ function Main({ assignments, handleDelete, handleUpdate }) {
 }
 
 export default Main;
-
-

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Form from './Form';
 
-function Assignment({ assignment, handleDelete, handleUpdate }) {
+function AssignmentMasterEdit({ assignment_masters, handleDelete, handleUpdate }) {
 
     const [editFormVisible, setEditFormVisible] = useState(false);
 
@@ -17,19 +17,17 @@ function Assignment({ assignment, handleDelete, handleUpdate }) {
             editFormVisible={editFormVisible}
             toggleForm={toggleForm}
             handleUpdate={handleUpdate} 
-            assignment={assignment}
+            assignment_masters={assignment_masters}
             />
           :
           <div className="assignment">
-            <h3>{assignment.name}</h3>
-            <p>{assignment.grade}</p>
-            <small>{assignment.due_date}</small>
-            <button onClick={() => handleDelete(assignment.id)}>X</button>
+            <h3>{assignment_masters.name}</h3>
+            <p>{assignment_masters.description}</p>
+            <button onClick={() => handleDelete(assignment_masters.id)}>X</button>
             <button onClick={toggleForm}>Edit</button>
           </div>
         }
       </>
     );
 }
-
-export default Assignment;
+export default AssignmentMasterEdit

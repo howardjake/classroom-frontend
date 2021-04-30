@@ -3,34 +3,48 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Main from "./Pages/Main";
 import Nav from "./components/Nav";
-import Aside from "./components/AssignmentListView"
+import NavMaster from './components/NavMaster.js'
+import NewAssignmentListView from "./components/NewAssignmentListView"
 import { Route, Switch } from "react-router-dom";
+import AssignmentForm from "./Pages/AssignmentForm";
+import Student from "./Pages/Student";
 
 import { auth } from "./services/firebase"
 
 import {
+	createAssignmentMasters,
+	deleteAssignmentMasters,
 	fetchAssignments,
-	createAssignment,
-	deleteAssignment,
-	updateAssignment,
+	fetchAssignmentMasters,
 	fetchStudents,
+
 } from "./services/api-service";
 import Assignment from "./Pages/Assignment";
 import Student from "./Pages/Student";
 import StudentList from "./components/StudentList";
+
 
 function App() {
 	const [assignmentsState, setAssignmentsState] = useState({
 		user: null, 
 		assignments: [] });
 	const [studentsState, setStudentsState] = useState({ students: [] });
+	const [assignment_mastersState, setAssignment_MastersState] = useState({ assignment_masters: [] });
 
 	useEffect(() => {
+
 		async function getAssignments() {
 			const assignments = await fetchAssignments();
 			setAssignmentsState({ assignments });
 		}
 		getAssignments();
+
+		async function getAssignment_Masters() {
+			const assignment_masters = await fetchAssignmentMasters();
+			setAssignment_MastersState({ assignment_masters });
+		}
+		getAssignment_Masters();
+
 		async function getStudents() {
 			const students = await fetchStudents();
 			setStudentsState({ students });
@@ -55,21 +69,24 @@ function App() {
 			cancelSub();
 		  }
 		
-	}, []);
+	}, 
+		[]
+	);
 
 	async function handleAdd(formInputs) {
+		console.log(formInputs)
 		try {
-			const assignments = await createAssignment(formInputs);
-			setAssignmentsState({ assignments });
+			const assignment_masters = await createAssignmentMasters(formInputs);
+			setAssignment_MastersState({ assignment_masters });
 		} catch (error) {
 			console.log(error);
 		}
 	}
-
-	async function handleDelete(assignmentId) {
+	
+	async function handleDelete(assignment_mastersId) {
 		try {
-			const assignments = await deleteAssignment(assignmentId);
-			setAssignmentsState({ assignments });
+			const assignment_masters = await deleteAssignmentMasters(assignment_mastersId);
+			setAssignment_MastersState({ assignment_masters });
 		} catch (error) {
 			console.log(error);
 		}
@@ -89,18 +106,34 @@ function App() {
 			<div className="container">
 				<Header />
 				<Nav students={studentsState.students} />
-				
-
 				<Switch>
 					<Route
 						exact
 						path="/"
 						render={() => (
 							<Main
-								
 							/>
-						)}
+					)}/>
+					<Route 
+					exact 
+					path="/assignments" 
+					render={() => 
+						<NewAssignmentListView assignments={assignmentsState.assignments}/>
+						} 
 					/>
+
+					<Route 
+					exact 
+					path="/assignment_masters" 
+					render={() => 
+						<AssignmentForm	 
+						assignments={assignmentsState.assignments}
+						handleAdd={handleAdd}
+						handleDelete={handleDelete}
+						handleUpdate={handleUpdate} />	} 
+					/>
+			
+
 
 					<Route exact path="/assignment" render={() => <Aside assignments={assignmentsState.assignments} 
 						handleDelete={handleDelete}
@@ -118,6 +151,7 @@ function App() {
 					/>
 
 				</Switch>
+				<NavMaster assignment_masters={assignment_mastersState.assignment_masters} />
 				<Footer />
 			
 			</div>
@@ -126,4 +160,4 @@ function App() {
 }
 
 export default App;
-							
+
