@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 import Main from "./Pages/Main";
@@ -18,6 +17,7 @@ import {
 } from "./services/api-service";
 import Assignment from "./Pages/Assignment";
 import Student from "./Pages/Student";
+import StudentList from "./components/StudentList";
 
 function App() {
 	const [assignmentsState, setAssignmentsState] = useState({
@@ -108,6 +108,7 @@ function App() {
 					<Route expath path="/student/:id" render={() => <Student />} />
 				</Switch>
 				<Footer />
+			
 			</div>
 		</div>
 	);
