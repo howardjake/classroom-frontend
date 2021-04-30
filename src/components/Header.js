@@ -4,7 +4,8 @@ import { login, logout } from '../services/firebase';
 const Header = (props) => (
     <header>
         <h1>Gradebook App</h1>
-         <ul>
+        
+         <ul className="login-prompt">
             {
                 props.user ?
                 <>
@@ -15,7 +16,17 @@ const Header = (props) => (
                 :
                 <li className="auth-link" onClick={login}>Welcome, please login to continue!</li>
             }
+
         </ul>
+
+        <ul className="navigation">
+            <li><a href="./">Home</a></li>
+           <li><a href="#">Add Assignment</a></li> 
+           <li><a href="#">Login</a></li> 
+           <li><a href="#">Logout</a></li> 
+        </ul>
+
+
     </header>
 ); 
 

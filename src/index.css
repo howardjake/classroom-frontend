@@ -8,6 +8,11 @@
   --oasis-blue: rgba(191, 215, 234, 1);
 }
 
+body {
+  color: white;
+  font-family: 'Playfair Display', serif;
+}
+
 h1 {
   text-align: center;
 }
@@ -27,29 +32,31 @@ h1 {
 
 header {
   grid-area: header;
-  background-color: var(--oasis-blue);
+  background-color: #142E4F;
 }
 
 nav {
   grid-area: nav;
   margin-left: 0.5rem;
-  background-color: var(--oasis-green);
+  height: 100vh;
+  background-color: #4289D0;
 }
 
 main {
   grid-area: content;
-  background-color: var(--sandy);
+  background-color: white;
+  color: black;
 }
 
-aside {
+/* aside {
   grid-area: aside;
   margin-right: 0.5rem;
   background-color: var(--oasis-green);
-}
+} */
 
 footer {
   grid-area: footer;
-  background-color: var(--oasis-blue);
+  background-color: #142E4F;
 }
 
 .notice {
@@ -116,4 +123,49 @@ body {
   nav {
     padding: 20px 20%
   }
+}
+
+.footer-info {
+  list-style: none;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.navigation {
+  list-style: none;
+  display: flex;
+  float: right;
+}
+
+.navigation li {
+    width: 50%;
+    display: flex;
+    text-align: center;
+    justify-content: space-evenly;
+    
+}
+
+
+.auth-link {
+  list-style: none;
+  display: flex;
+}
+
+.login-prompt {
+  list-style: none;
+  display: flex;
+  float: left;
+  display: inline-block;
+}
+
+footer a{
+  color: white;
+}
+
+header a{
+  color: white;
+}
+
+nav a {
+  color: white;
 }
