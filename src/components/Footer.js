@@ -2,8 +2,12 @@
 function Footer(props) {
     return (
       <footer>
-        <h1>Footer - Generic Elementary School</h1>
-        <h3>generic footer details </h3>
+        <ul className="footer-info">
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Acceptable Use Policy</a></li>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">Twitter</a></li>
+        </ul>
       </footer>
     );
 }

@@ -9,19 +9,25 @@ import { Route, Switch } from "react-router-dom";
 import AssignmentForm from "./Pages/AssignmentForm";
 import Student from "./Pages/Student";
 
+import { auth } from "./services/firebase"
+
 import {
 	createAssignmentMasters,
 	deleteAssignmentMasters,
 	fetchAssignments,
 	fetchAssignmentMasters,
 	fetchStudents,
-	updateAssignment,
-} 
-from "./services/api-service";
+
+} from "./services/api-service";
+import Assignment from "./Pages/Assignment";
+import Student from "./Pages/Student";
+import StudentList from "./components/StudentList";
 
 
 function App() {
-	const [assignmentsState, setAssignmentsState] = useState({ assignments: [] });
+	const [assignmentsState, setAssignmentsState] = useState({
+		user: null, 
+		assignments: [] });
 	const [studentsState, setStudentsState] = useState({ students: [] });
 	const [assignment_mastersState, setAssignment_MastersState] = useState({ assignment_masters: [] });
 
@@ -44,6 +50,24 @@ function App() {
 			setStudentsState({ students });
 		}
 		getStudents();
+
+		const cancelSub = auth.onAuthStateChanged(user => {
+			if (user) {
+			  setAssignmentsState(prevState => ({
+				...prevState, 
+				user,
+			  }));
+			} else {
+			  setAssignmentsState(prevState => ({
+				...prevState,
+				user,
+			  })); 
+			}
+		  });
+		  
+		  return function() {
+			cancelSub();
+		  }
 		
 	}, 
 		[]
@@ -97,6 +121,7 @@ function App() {
 						<NewAssignmentListView assignments={assignmentsState.assignments}/>
 						} 
 					/>
+
 					<Route 
 					exact 
 					path="/assignment_masters" 
@@ -107,15 +132,28 @@ function App() {
 						handleDelete={handleDelete}
 						handleUpdate={handleUpdate} />	} 
 					/>
-					<Route 
-					expath 
-					path="/student/:id" 
-					render={() =>
-						<Student />}
+			
+
+
+					<Route exact path="/assignment" render={() => <Aside assignments={assignmentsState.assignments} 
+						handleDelete={handleDelete}
+						handleUpdate={handleUpdate}
+					/>	} />
+					<Route
+						path="/student/:id"
+						render={() => (
+							<Student
+								students={studentsState.students}
+								assignments={assignmentsState.assignments}
+								handleUpdate={handleUpdate}
+							/>
+						)}
 					/>
+
 				</Switch>
 				<NavMaster assignment_masters={assignment_mastersState.assignment_masters} />
 				<Footer />
+			
 			</div>
 		</div>
 	);
