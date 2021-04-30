@@ -1,9 +1,8 @@
-// Header where we can add firebase login
-import { login, logout } from '../services/firebase';
 
 const Header = (props) => (
     <header>
         <h1>Gradebook App</h1>
+
         
          <ul className="login-prompt">
             {
@@ -25,6 +24,7 @@ const Header = (props) => (
            <li><a href="#">Login</a></li> 
            <li><a href="#">Logout</a></li> 
         </ul>
+
 
 
     </header>
