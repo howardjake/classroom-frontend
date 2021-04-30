@@ -1,19 +1,20 @@
-//Form to add assignment for class
-
 
 import { useState, useEffect } from 'react';
 import Input from './Input.js';
 
 function Form(props) {
     const [formState, setFormState] = useState({
-      name:'',
-      description:'',
-      course_id: '1'
+      assignment_masters: [],
+      NewAssignmentMasters: {
+        name: "",
+        description:'',
+      }
+   
     });
 
   useEffect(() => {
     if(props.editFormVisible) {
-      const {name, description, id} = props.notice;
+      const {name, description} = props.notice;
       setFormState({
         name,
         description,
@@ -37,6 +38,7 @@ function Form(props) {
       props.handleAdd(formState);
     }
   }
+
     return (
       <form onSubmit={handleSubmit}>
         <Input
@@ -63,12 +65,13 @@ function Form(props) {
           id="course_id"
           name="course_id"
           type="number"
-          value="1"
+          value="5"
           onChange={handleChange}
         />
-       <input type="submit" value={props.editFormVisible ? 'Update' : 'Add'} />
+       <input type="submit" value={props.editFormVisible ? 'Update' : 'Add here'} />
       </form>
     );
   }
 
 export default Form;
+

@@ -8,6 +8,8 @@ function AssignmentMasterList({ assignment_masters }) {
 				return (
 					<Link id={idx} to={`/assignment_masters/${assignment_master.id}`}>
 						<p>{assignment_master.name}</p>
+						<p>Assignment Id: {assignment_master.id} </p>
+                        <p>Description: {assignment_master.description}</p>
 					</Link>
 				);
 			})}	
@@ -15,5 +17,6 @@ function AssignmentMasterList({ assignment_masters }) {
 	);
 }
 export default AssignmentMasterList;
+
 
 

@@ -15,6 +15,7 @@ function Input({
         
           id={name}
           name={name}
+          description={description}
           type={type}
           value={value}
           onChange={handleChange}

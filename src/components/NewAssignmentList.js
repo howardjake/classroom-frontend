@@ -22,5 +22,3 @@ function NewAssignmentList({ assignments }) {
 	);
 }
 export default NewAssignmentList;
-
-

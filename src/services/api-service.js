@@ -15,7 +15,7 @@ function fetchStudents() {
 	return fetch(STUDENT_URL).then((res) => res.json());
 }
 
-function createAssignment(data) {
+function createAssignmentMasters(data) {
 	return fetch(MASTERS_URL, {
 		method: "POST",
 		headers: {
@@ -25,7 +25,7 @@ function createAssignment(data) {
 	}).then((res) => res.json());
 }
 
-function deleteAssignment(id) {
+function deleteAssignmentMasters(id) {
 	return fetch(`${MASTERS_URL}/${id}`, {
 		method: "DELETE",
 	}).then((res) => res.json());
@@ -43,8 +43,8 @@ function updateAssignment({ name, grade, due_date, id }) {
 
 export {
 	fetchAssignments,
-	createAssignment,
-	deleteAssignment,
+	createAssignmentMasters,
+	deleteAssignmentMasters,
 	updateAssignment,
 	fetchStudents,
 	fetchAssignmentMasters
