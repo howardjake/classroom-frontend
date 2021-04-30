@@ -101,11 +101,22 @@ function App() {
 							/>
 						)}
 					/>
+
 					<Route exact path="/assignment" render={() => <Aside assignments={assignmentsState.assignments} 
 						handleDelete={handleDelete}
 						handleUpdate={handleUpdate}
 					/>	} />
-					<Route expath path="/student/:id" render={() => <Student />} />
+					<Route
+						path="/student/:id"
+						render={() => (
+							<Student
+								students={studentsState.students}
+								assignments={assignmentsState.assignments}
+								handleUpdate={handleUpdate}
+							/>
+						)}
+					/>
+
 				</Switch>
 				<Footer />
 			
