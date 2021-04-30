@@ -14,7 +14,7 @@ const Header = (props) => (
                     <li className="auth-link" onClick={logout}>Logout</li>
                 </>
                 :
-                <li className="auth-link" onClick={login}>Welcome, please login to continue!</li>
+                <li className="auth-link" onClick={login}>Welcome! Please login to continue.</li>
             }
 
         </ul>

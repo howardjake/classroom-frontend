@@ -15,7 +15,10 @@ function StudentList({ students }) {
 				);
 			})}
 			</ul>
+
+			
 		</>
+		
 		
 	);
 }
