@@ -14,6 +14,9 @@ function NavMaster({
 			<AssignmentMasterList
 				assignment_masters={assignment_masters}
 				handleMaster={handleMaster}
+				handleDelete={handleDelete}
+				handleUpdate={handleUpdate}
+				handleAdd={handleAdd}
 			/>
 			<AssignmentForm
 				assignments={assignments}

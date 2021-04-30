@@ -3,9 +3,9 @@ import Input from "./Input.js";
 
 function Form(props) {
 	const [formState, setFormState] = useState({
-		assignment_masters: [],
+		//assignment_masters: [],
 		NewAssignmentMasters: {
-			name: "test",
+			name: "",
 			description: "",
 			course_id: 1,
 		},
@@ -76,3 +76,5 @@ function Form(props) {
 }
 
 export default Form;
+
+

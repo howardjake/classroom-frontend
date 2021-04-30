@@ -40,13 +40,13 @@ function updateAssignment({ id, grade }) {
 		body: JSON.stringify({ grade }),
 	}).then((res) => res.json());
 }
-function updateMaster({ id, name, dueDate }) {
+function updateMaster({ id, name, description, dueDate }) {
 	return fetch(`${MASTERS_URL}/${id}`, {
 		method: "PUT",
 		headers: {
 			"Content-type": "Application/json",
 		},
-		body: JSON.stringify({ name, dueDate }),
+		body: JSON.stringify({ name, id, description, dueDate }),
 	}).then((res) => res.json());
 }
 

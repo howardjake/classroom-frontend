@@ -55,16 +55,3 @@ function StudentData({ student, assignments, handleUpdate }) {
 	);
 }
 export default StudentData;
-
-{
-	/* <form onSubmit={handleSubmit}>
-									<input
-										handleChange={handleChange}
-										type="number"
-										name="grade"
-										value={assignment.grade}
-										id="grade"
-									/>
-									<button>update</button>
-								</form> */
-}

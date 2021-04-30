@@ -81,10 +81,10 @@ function App() {
 		}
 	}
 
-	async function handleDelete(assignment_mastersId) {
+	async function handleDelete(formInputs) {
 		try {
 			const assignment_masters = await deleteAssignmentMasters(
-				assignment_mastersId
+				formInputs
 			);
 			setAssignment_MastersState({ assignment_masters });
 		} catch (error) {
@@ -106,8 +106,8 @@ function App() {
 	}
 	async function handleMaster(formInputs) {
 		try {
-			const assignmentMaster = await updateMaster(formInputs);
-			setAssignment_MastersState({ assignmentMaster });
+			const assignment_masters = await updateMaster(formInputs);
+			setAssignment_MastersState({ assignment_masters });
 		} catch (error) {
 			console.log(error);
 		}
@@ -134,6 +134,7 @@ function App() {
 										handleAdd={handleAdd}
 										handleDelete={handleDelete}
 										handleUpdate={handleUpdate}
+
 									/>
 								)}
 							/>
@@ -146,6 +147,7 @@ function App() {
 										handleAdd={handleAdd}
 										handleDelete={handleDelete}
 										handleUpdate={handleUpdate}
+										handleMaster={handleMaster}
 									/>
 								)}
 							/>
