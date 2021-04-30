@@ -33,7 +33,10 @@ function App() {
 	useEffect(() => {
 		async function getAssignments() {
 			const assignments = await fetchAssignments();
-			setAssignmentsState({ assignments });
+			setAssignmentsState((prevState) => ({
+				...prevState,
+				assignments,
+			}));
 		}
 		getAssignments();
 
@@ -93,7 +96,10 @@ function App() {
 		console.log(formInputs);
 		try {
 			const assignments = await updateAssignment(formInputs);
-			setAssignmentsState({ assignments });
+			setAssignmentsState((prevState) => ({
+				...prevState,
+				assignments,
+			}));
 		} catch (error) {
 			console.log(error);
 		}
