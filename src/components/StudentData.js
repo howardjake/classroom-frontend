@@ -14,9 +14,9 @@ function StudentData({ student, assignments, handleUpdate }) {
 			<table>
 				<tr>
 					<th>Assignemnt</th>
-					<th>Date Submitted</th>
-					<th>Resubmit</th>
 					<th>Due Date</th>
+					<th>Resubmit</th>
+					<th>Date Submitted</th>
 					<th>Grade</th>
 				</tr>
 				{assignments.map((assignment) => (
@@ -43,6 +43,13 @@ function StudentData({ student, assignments, handleUpdate }) {
 						)}
 					</tr>
 				))}
+				<tr>
+					<td>Average</td>
+					<td></td>
+					<td></td>
+					<td></td>
+					<td>Number</td>
+				</tr>
 			</table>
 		</div>
 	);

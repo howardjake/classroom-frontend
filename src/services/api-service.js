@@ -40,6 +40,15 @@ function updateAssignment({ id, grade }) {
 		body: JSON.stringify({ grade }),
 	}).then((res) => res.json());
 }
+function updateMaster({ id, name, dueDate }) {
+	return fetch(`${MASTERS_URL}/${id}`, {
+		method: "PUT",
+		headers: {
+			"Content-type": "Application/json",
+		},
+		body: JSON.stringify({ name, dueDate }),
+	}).then((res) => res.json());
+}
 
 export {
 	fetchAssignments,
@@ -47,5 +56,6 @@ export {
 	deleteAssignmentMasters,
 	updateAssignment,
 	fetchStudents,
-	fetchAssignmentMasters
+	fetchAssignmentMasters,
+	updateMaster,
 };

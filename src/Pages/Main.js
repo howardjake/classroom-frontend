@@ -1,15 +1,5 @@
-  
-import Welcome from "../components/Welcome.js";
-
-
-
 function Main(props) {
-	return (
-		<main>
-			<Welcome />
-			
-		</main>
-	);
+	return <main>This is a welcome</main>;
 }
 
 export default Main;
