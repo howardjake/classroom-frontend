@@ -1,4 +1,4 @@
 function Welcome(props) {
-	return <div> Welcome page</div>;
+	return <div id="welcome"> Welcome page</div>;
 }
 export default Welcome;

@@ -1,13 +1,11 @@
 import { useState, useEffect } from "react";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
-import Main from "./Pages/Main";
 import Nav from "./components/Nav";
 import NavMaster from "./components/NavMaster.js";
 import { Route, Switch } from "react-router-dom";
 import AssignmentForm from "./Pages/AssignmentForm";
 import Student from "./Pages/Student";
-// import Aside from
 import { auth } from "./services/firebase";
 
 import {
@@ -19,6 +17,8 @@ import {
 	updateAssignment,
 	updateMaster,
 } from "./services/api-service";
+import Dashboard from "./components/Dashboard";
+import Welcome from "./components/Welcome";
 
 function App() {
 	const [assignmentsState, setAssignmentsState] = useState({
@@ -159,9 +159,18 @@ function App() {
 									/>
 								)}
 							/>
+							<Route
+								exact
+								path="/"
+								render={() => <Dashboard user={assignmentsState.user} />}
+							/>
 						</>
 					) : (
-						<Route exact path="/" render={() => <Main />} />
+						<Route
+							exact
+							path="/"
+							render={() => <Welcome user={assignmentsState.user} />}
+						/>
 					)}
 				</Switch>
 
