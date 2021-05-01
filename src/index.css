@@ -175,3 +175,73 @@ header a {
 nav a {
 	color: white;
 }
+
+
+.card-container-one {
+	margin: auto;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+}
+
+.card-container-two {
+	margin: auto;
+	display: flex;
+	justify-content: space-evenly;
+}
+
+  .student-num {
+	width: 425px;
+	height: 225px;
+	background-color: #fff;
+	background: linear-gradient(#f8f8f8, #fff);
+	box-shadow: 0 8px 16px -8px rgba(0,0,0,0.4);
+	border-radius: 6px;
+	overflow: hidden;
+	position: relative;
+	margin: 1.5rem;
+	display: flex;
+	justify-content: center;
+  }
+
+  .grade-avg {
+	width: 425px;
+	height: 225px;
+	background-color: #fff;
+	background: linear-gradient(#f8f8f8, #fff);
+	box-shadow: 0 8px 16px -8px rgba(0,0,0,0.4);
+	border-radius: 6px;
+	overflow: hidden;
+	position: relative;
+	margin: 1.5rem;
+	display: flex;
+	justify-content: center;
+  }
+
+  .upcoming {
+	width: 425px;
+	height: 225px;
+	background-color: #fff;
+	background: linear-gradient(#f8f8f8, #fff);
+	box-shadow: 0 8px 16px -8px rgba(0,0,0,0.4);
+	border-radius: 6px;
+	overflow: hidden;
+	position: relative;
+	margin: 1.5rem;
+	display: flex;
+	justify-content: center;
+  }
+
+  .course-card {
+	width: 425px;
+	height: 225px;
+	background-color: #fff;
+	background: linear-gradient(#f8f8f8, #fff);
+	box-shadow: 0 8px 16px -8px rgba(0,0,0,0.4);
+	border-radius: 6px;
+	overflow: hidden;
+	position: relative;
+	margin: 1.5rem;
+	display: flex;
+	justify-content: center;
+  }
