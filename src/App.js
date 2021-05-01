@@ -14,6 +14,7 @@ import {
 	fetchAssignments,
 	fetchAssignmentMasters,
 	fetchStudents,
+	fetchDashboard,
 	updateAssignment,
 	updateMaster,
 } from "./services/api-service";
@@ -29,6 +30,7 @@ function App() {
 	const [assignment_mastersState, setAssignment_MastersState] = useState({
 		assignment_masters: [],
 	});
+	const [dashboardState, setDashboardState] = useState({ dashboard: null });
 
 	useEffect(() => {
 		async function getAssignments() {
@@ -51,6 +53,13 @@ function App() {
 			setStudentsState({ students });
 		}
 		getStudents();
+
+		async function getDashboard() {
+			const dashboard = await fetchDashboard();
+			setDashboardState({ dashboard })
+		}
+		getDashboard()
+
 
 		const cancelSub = auth.onAuthStateChanged((user) => {
 			if (user) {
@@ -164,7 +173,7 @@ function App() {
 							<Route
 								exact
 								path="/"
-								render={() => <Dashboard user={assignmentsState.user} />}
+								render={() => <Dashboard dashboardState={dashboardState.dashboard} user={assignmentsState.user} />}
 							/>
 						</>
 					) : (

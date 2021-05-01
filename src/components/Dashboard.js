@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 
-function Dashboard({ students, class_average, name, assignments_list, start_date, end_date, number_of_students }) {
+function Dashboard({dashboardState, students}) {
 
 	
 return (
@@ -10,14 +10,14 @@ return (
 
 		<div className="course-card">
 			<p>Course info</p>
-			<p>{students.name}</p>
-			<p>Start Date: {students.start_date}</p>
-			<p>End Date: {students.end_date}</p>
+			<p>{dashboardState.name}</p>
+			<p>Start Date: {dashboardState.start_date}</p>
+			<p>End Date: {dashboardState.end_date}</p>
 		</div>
 
 		<div className="student-num">
 			<p>Number of Students </p>
-			<p>{students.number_of_students}</p>
+			<p>{dashboardState.number_of_students}</p>
 		</div>
 
 
@@ -25,12 +25,12 @@ return (
 	
 		<div className="grade-avg">
 			<p>Class Average </p>
-			<p>{students.class_average}</p>
+			<p>{dashboardState.class_average}</p>
 		</div>
 
 		<div className="upcoming">
 			<p>Upcoming Assignments</p>
-			<p>{students.assignments_list}</p>
+			<p>{dashboardState.assignments_list}</p>
 		</div>
 
 		</div>
