@@ -6,6 +6,10 @@ const MASTERS_URL = "http://localhost:3000/assignment_masters";
 const STUDENT_URL = "http://localhost:3000/students";
 const DASHBOARD_URL = "http://localhost:3000/dashboard"
 
+//const BASE_URL = `https://project4back.herokuapp.com/api/assignments`
+
+
+
 function fetchAssignments() {
 	return fetch(BASE_URL).then((res) => res.json());
 }
