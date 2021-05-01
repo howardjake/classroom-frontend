@@ -54,11 +54,6 @@ main {
 	color: black;
 }
 
-/* aside {
-  grid-area: aside;
-  margin-right: 0.5rem;
-  background-color: var(--oasis-green);
-} */
 
 footer {
 	grid-area: footer;
@@ -245,3 +240,33 @@ nav a {
 	display: flex;
 	justify-content: center;
   }
+
+  .assignmentmastersmapped {
+  	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 2%;
+	padding: 2%;
+	border: #1e74cc;
+	border-style: solid;
+
+  }
+
+  .Welcome_User {
+	  color: white
+  }
+
+  .auth-link {
+	  color: white
+  }
+
+  .Header_Message {
+	  color: white
+  }
+
+.FormEntry {
+	margin: 2%;
+	padding: 2%;
+	border: #1e74cc;
+	border-style:solid;
+}

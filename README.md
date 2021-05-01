@@ -1,6 +1,6 @@
 # Ruby on Rails React Gradebook
 
-This single page app is designed for teachers to keep track of their stuents assignments. Teachers can add/remove assignments for the class and edit each students individual assignment.
+This single page app is designed for teachers to keep track of their stuents assignments. Teachers can add/remove assignments for the class and edit each students individual assignment. Google firebase login authentication is incorporated to let each teacher have a gradebook for their unique classes.
 
 ## Technologies Used
 
@@ -18,9 +18,9 @@ This single page app is designed for teachers to keep track of their stuents ass
 
 ## App Design
 
-* No user logged in: (<https://github.com/garrettruss/Project-Three-Front/blob/main/src/Images/NoUser.png>)
-* Table: (<https://github.com/garrettruss/Project-Three-Front/blob/main/src/Images/Table.png>)
-* Form: (<https://github.com/garrettruss/Project-Three-Front/blob/main/src/Images/EditForm.png>)
+* No user logged in:
+* Table:
+* Form:
 
 ## Getting Started
 

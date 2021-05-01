@@ -6,8 +6,8 @@ const MASTERS_URL = "http://localhost:3000/assignment_masters";
 const STUDENT_URL = "http://localhost:3000/students";
 const DASHBOARD_URL = "http://localhost:3000/dashboard"
 
-//const BASE_URL = `https://project3back.herokuapp.com/api/mountains?uid=${state.user.uid}`
-//const BASE_URL = 'https://project3back.herokuapp.com/api/mountains';
+//const BASE_URL = `https://project4back.herokuapp.com/api/assignments`
+
 
 
 function fetchAssignments() {

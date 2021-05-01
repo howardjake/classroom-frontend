@@ -1,16 +1,14 @@
 //import { Link } from "react-router-dom";
-import { useState } from "react";
+//import { useState } from "react";
 //import MasterForm from "../components/MasterForm";
 
 function AssignmentMasterList({
 	assignment_masters,
-	name,
-	description,
-	id,
-	handleMaster,
 	handleDelete,
-	handleUpdate,
-}) {
+})
+ {
+	//Assignment Master Edit will be reincorporated later. 
+
 	//const [assignmentMasterListState, setAssignmentMasterListState] = useState({
 	//name: name,
 	//id: id,
@@ -27,8 +25,8 @@ function AssignmentMasterList({
 		<>
 			{assignment_masters.map((assignment_master) => {
 				return (
-					<div>
-						<p>{assignment_master.name}</p>
+					<div className="assignmentmastersmapped">
+						<p>Assignment Name: {assignment_master.name}</p>
 						<p>Assignment Id: {assignment_master.id} </p>
 						<p>Description: {assignment_master.description}</p>
 						<p>Due Date: {assignment_master.due_date}</p>
@@ -36,7 +34,7 @@ function AssignmentMasterList({
 							value={assignment_master.id}
 							onClick={() => handleDelete(assignment_master.id)}
 						>
-							X
+							Delete Assignment
 						</button>
 					</div>
 				);
