@@ -30,7 +30,7 @@ function App() {
 	const [assignment_mastersState, setAssignment_MastersState] = useState({
 		assignment_masters: [],
 	});
-	const [dashboardState, setDashboardState] = useState({ dashboard: null });
+	const [dashboardState, setDashboardState] = useState({ dashboard: [] });
 
 	useEffect(() => {
 		async function getAssignments() {
@@ -56,10 +56,9 @@ function App() {
 
 		async function getDashboard() {
 			const dashboard = await fetchDashboard();
-			setDashboardState({ dashboard })
+			setDashboardState({ dashboard });
 		}
-		getDashboard()
-
+		getDashboard();
 
 		const cancelSub = auth.onAuthStateChanged((user) => {
 			if (user) {
@@ -92,9 +91,7 @@ function App() {
 
 	async function handleDelete(formInputs) {
 		try {
-			const assignment_masters = await deleteAssignmentMasters(
-				formInputs
-			);
+			const assignment_masters = await deleteAssignmentMasters(formInputs);
 			setAssignment_MastersState({ assignment_masters });
 		} catch (error) {
 			console.log(error);
@@ -126,10 +123,10 @@ function App() {
 		<div className="App">
 			<div className="container">
 				<Header user={assignmentsState.user} />
+				<Nav students={studentsState.students} />
 				<Switch>
 					{assignmentsState.user ? (
 						<>
-							<Nav students={studentsState.students} />
 							<Route
 								exact
 								path="/assignments"
@@ -143,7 +140,6 @@ function App() {
 										handleAdd={handleAdd}
 										handleDelete={handleDelete}
 										handleUpdate={handleUpdate}
-
 									/>
 								)}
 							/>
@@ -173,7 +169,12 @@ function App() {
 							<Route
 								exact
 								path="/"
-								render={() => <Dashboard dashboardState={dashboardState.dashboard} user={assignmentsState.user} />}
+								render={() => (
+									<Dashboard
+										dashboardState={dashboardState.dashboard}
+										user={assignmentsState.user}
+									/>
+								)}
 							/>
 						</>
 					) : (
