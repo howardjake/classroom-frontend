@@ -1,7 +1,7 @@
 //Daniels Notice Lab
 
 // TODO: eventually change this to heroku
-const BASE_URL = "https://gradebook-backend.herokuapp.com//assignments";
+const BASE_URL = "http://localhost:3000/assignments";
 const MASTERS_URL = "http://localhost:3000/assignment_masters";
 const STUDENT_URL = "http://localhost:3000/students";
 const DASHBOARD_URL = "http://localhost:3000/dashboard"
