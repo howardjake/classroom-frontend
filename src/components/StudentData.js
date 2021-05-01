@@ -25,9 +25,9 @@ function StudentData({ student, assignments, handleUpdate }) {
 	return (
 		<div>
 			<h2>{student?.name} </h2>
-			<span>{gradeLetter(average)}</span>
+			<span>Grade Average: {gradeLetter(average)}</span>
 			<p>
-				<em>{student?.email}</em>
+				<strong> Email:</strong> <em>{student?.email}</em>
 			</p>
 			<Table striped bordered hover>
 				<thead>

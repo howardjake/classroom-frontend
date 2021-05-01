@@ -12,9 +12,7 @@ const Header = ({ user }) => (
 			{user ? (
 				<>
 					<li>Welcome, {user.displayName}!</li>
-					<li>
-						<Link to="/assignment_masters">Add Assignment</Link>
-					</li>
+
 					<li>
 						<Link to="/assignments">Current Assignments</Link>
 					</li>

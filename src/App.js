@@ -30,7 +30,7 @@ function App() {
 	const [assignment_mastersState, setAssignment_MastersState] = useState({
 		assignment_masters: [],
 	});
-	const [dashboardState, setDashboardState] = useState({ dashboard: [] });
+	const [dashboardState, setDashboardState] = useState({ dashboard: null });
 
 	useEffect(() => {
 		async function getAssignments() {
@@ -84,6 +84,14 @@ function App() {
 		try {
 			const assignment_masters = await createAssignmentMasters(formInputs);
 			setAssignment_MastersState({ assignment_masters });
+			async function getAssignments() {
+				const assignments = await fetchAssignments();
+				setAssignmentsState((prevState) => ({
+					...prevState,
+					assignments,
+				}));
+			}
+			getAssignments();
 		} catch (error) {
 			console.log(error);
 		}
@@ -93,6 +101,14 @@ function App() {
 		try {
 			const assignment_masters = await deleteAssignmentMasters(formInputs);
 			setAssignment_MastersState({ assignment_masters });
+			async function getAssignments() {
+				const assignments = await fetchAssignments();
+				setAssignmentsState((prevState) => ({
+					...prevState,
+					assignments,
+				}));
+			}
+			getAssignments();
 		} catch (error) {
 			console.log(error);
 		}
@@ -106,6 +122,14 @@ function App() {
 				...prevState,
 				assignments,
 			}));
+			async function getAssignments() {
+				const assignments = await fetchAssignments();
+				setAssignmentsState((prevState) => ({
+					...prevState,
+					assignments,
+				}));
+			}
+			getAssignments();
 		} catch (error) {
 			console.log(error);
 		}
@@ -123,10 +147,10 @@ function App() {
 		<div className="App">
 			<div className="container">
 				<Header user={assignmentsState.user} />
-				<Nav students={studentsState.students} />
 				<Switch>
 					{assignmentsState.user ? (
 						<>
+							<Nav students={studentsState.students} />
 							<Route
 								exact
 								path="/assignments"
@@ -143,19 +167,7 @@ function App() {
 									/>
 								)}
 							/>
-							<Route
-								exact
-								path="/assignment_masters"
-								render={() => (
-									<AssignmentForm
-										assignments={assignmentsState.assignments}
-										handleAdd={handleAdd}
-										handleDelete={handleDelete}
-										handleUpdate={handleUpdate}
-										handleMaster={handleMaster}
-									/>
-								)}
-							/>
+
 							<Route
 								path="/student/:id"
 								render={() => (

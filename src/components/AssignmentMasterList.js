@@ -2,22 +2,26 @@
 import { useState } from "react";
 //import MasterForm from "../components/MasterForm";
 
-function AssignmentMasterList({ assignment_masters, name, description, id, handleMaster, handleDelete, handleUpdate })
-{
-
+function AssignmentMasterList({
+	assignment_masters,
+	name,
+	description,
+	id,
+	handleMaster,
+	handleDelete,
+	handleUpdate,
+}) {
 	//const [assignmentMasterListState, setAssignmentMasterListState] = useState({
-		//name: name,
-		//id: id,
-		//description: description,
+	//name: name,
+	//id: id,
+	//description: description,
 	//});
 
-
 	//const [editFormVisible, setEditFormVisible] = useState(false);
-	
 
 	//function toggleForm() {
 	//	setEditFormVisible(!editFormVisible);
-//	}
+	//	}
 
 	return (
 		<>
@@ -27,9 +31,13 @@ function AssignmentMasterList({ assignment_masters, name, description, id, handl
 						<p>{assignment_master.name}</p>
 						<p>Assignment Id: {assignment_master.id} </p>
 						<p>Description: {assignment_master.description}</p>
-						<button value={assignment_master.id} onClick={() => handleDelete(assignment_master.id)}>X</button>
-						
-						
+						<p>Due Date: {assignment_master.due_date}</p>
+						<button
+							value={assignment_master.id}
+							onClick={() => handleDelete(assignment_master.id)}
+						>
+							X
+						</button>
 					</div>
 				);
 			})}
@@ -37,7 +45,6 @@ function AssignmentMasterList({ assignment_masters, name, description, id, handl
 	);
 }
 export default AssignmentMasterList;
-
 
 /*
 {editFormVisible ? (

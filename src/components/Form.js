@@ -7,6 +7,7 @@ function Form(props) {
 		NewAssignmentMasters: {
 			name: "",
 			description: "",
+			due_date: "",
 			course_id: 1,
 		},
 	});
@@ -58,6 +59,14 @@ function Form(props) {
 				id="grade"
 				hidden
 			/>
+			<Input
+				handleChange={handleChange}
+				name="due_date"
+				type="date"
+				value={formState.due_date}
+				id="due_date"
+				hidden
+			/>
 			<label htmlFor="course_id"></label>
 			<input
 				hidden
@@ -76,5 +85,3 @@ function Form(props) {
 }
 
 export default Form;
-
-
