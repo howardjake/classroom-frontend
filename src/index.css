@@ -244,4 +244,9 @@ nav a {
 	margin: 1.5rem;
 	display: flex;
 	justify-content: center;
+	text-align: center;
+  }
+
+  .card-body {
+	  display: inline-block;
   }
