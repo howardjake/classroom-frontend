@@ -77,7 +77,7 @@ function Form(props) {
 			/>
 			<input
 				type="submit"
-				value={props.editFormVisible ? "Update" : "Add here"}
+				value={props.editFormVisible ? "Update" : "Add New Assignment Here"}
 			/>
 		</form>
 	);
