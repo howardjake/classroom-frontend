@@ -37,6 +37,7 @@ function StudentData({ student, assignments, handleUpdate }) {
 						<th>Resubmit</th>
 						<th>Date Submitted</th>
 						<th>Grade</th>
+						{editFormVisible ? <th>Edits</th> : null}
 					</tr>
 				</thead>
 				<tbody>
@@ -46,20 +47,21 @@ function StudentData({ student, assignments, handleUpdate }) {
 							<td id={idx}>{assignment.due_date}</td>
 							<td id={idx}>{assignment.resubmit ? "✔" : "No"}</td>
 							<td id={idx}>{assignment.date_submitted}</td>
-							{editFormVisible ? (
+							<td>
+								{assignment.grade}
+								{!editFormVisible && <button onClick={toggleForm}>Edit</button>}
+							</td>
+							{editFormVisible && (
 								<td>
 									<GradeForm
 										editFormVisible={editFormVisible}
 										toggleForm={toggleForm}
 										handleUpdate={handleUpdate}
+										dateSubmitted={assignment.date_submitted}
+										resubmit={assignment.resubmit}
 										grade={assignment.grade}
 										id={assignment.id}
 									/>
-								</td>
-							) : (
-								<td>
-									{assignment.grade}
-									<button onClick={toggleForm}>Edit</button>
 								</td>
 							)}
 						</tr>
@@ -71,7 +73,7 @@ function StudentData({ student, assignments, handleUpdate }) {
 						<td></td>
 						<td></td>
 						<td></td>
-						<td>{average}</td>
+						<td>{Math.round(average)}</td>
 					</tr>
 				</tfoot>
 			</Table>

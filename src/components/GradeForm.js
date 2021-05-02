@@ -1,8 +1,17 @@
 import { useState } from "react";
 
-function Form({ grade, id, handleUpdate, toggleForm }) {
+function GradeForm({
+	grade,
+	id,
+	handleUpdate,
+	toggleForm,
+	resubmit,
+	dateSubmitted,
+}) {
 	const [formState, setFormState] = useState({
 		id: id,
+		resubmit: resubmit,
+		date_submitted: dateSubmitted,
 		grade: grade,
 	});
 
@@ -19,8 +28,26 @@ function Form({ grade, id, handleUpdate, toggleForm }) {
 		handleUpdate(formState);
 		toggleForm();
 	}
+
 	return (
 		<form onSubmit={handleSubmit}>
+			<label for="date_submitted">Date Submitted: </label>
+			<input
+				onChange={handleChange}
+				name="date_submitted"
+				type="date"
+				value={formState.date_submitted}
+				id="date_submitted"
+			/>
+			<label for="resubmit">Resubmit: </label>
+			<input
+				onChange={handleChange}
+				name="resubmit"
+				type="checkbox"
+				value="true"
+				id="resubmit"
+			/>
+			<label for="grade">Grade: </label>
 			<input
 				onChange={handleChange}
 				name="grade"
@@ -34,4 +61,4 @@ function Form({ grade, id, handleUpdate, toggleForm }) {
 	);
 }
 
-export default Form;
+export default GradeForm;
