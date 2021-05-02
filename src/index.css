@@ -17,6 +17,8 @@ h1 {
 	text-align: center;
 }
 
+
+
 .container {
 	display: grid;
 
@@ -40,15 +42,19 @@ nav {
 	margin-left: 0.5rem;
 	height: 100vh;
 	background: #1e74cc;
-	overflow: hidden;
+	overflow: scroll;
+	scroll-behavior: smooth;
 }
 
 .img {
 	opacity: 0.1;
 	width: 100%;
 	height: 100%;
+	
 }
 
+
+  
 main {
 	grid-area: content;
 	background-color: white;
