@@ -1,5 +1,3 @@
-//Daniels Notice Lab
-
 // TODO: eventually change this to heroku
 const BASE_URL = "http://localhost:3000/assignments";
 const MASTERS_URL = "http://localhost:3000/assignment_masters";
