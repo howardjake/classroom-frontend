@@ -2,7 +2,7 @@ import StudentList from "./StudentList";
 
 function Nav({ students }) {
 	return (
-		<nav>
+		<nav className="StudentList">
 				<StudentList students={students} />
 		</nav>
 	);

@@ -39,7 +39,8 @@ function Form(props) {
 	}
 
 	return (
-		<form onSubmit={handleSubmit}>
+		<form className="FormSubmit" onSubmit={handleSubmit}>
+			<h4>New Assignment For The Class</h4>
 			<Input
 				handleChange={handleChange}
 				name="name"
@@ -75,7 +76,7 @@ function Form(props) {
 				value="5"
 				onChange={handleChange}
 			/>
-			<input
+			<input className="AddAssignment"
 				type="submit"
 				value={props.editFormVisible ? "Update" : "Add New Assignment Here"}
 			/>

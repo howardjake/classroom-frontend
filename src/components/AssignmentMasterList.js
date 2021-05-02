@@ -28,13 +28,13 @@ function AssignmentMasterList({
 					<div className="assignmentmastersmapped">
 						<p>Assignment Name: {assignment_master.name}</p>
 						<p>Assignment Id: {assignment_master.id} </p>
-						<p>Description: {assignment_master.description}</p>
-						<p>Due Date: {assignment_master.due_date}</p>
+						<p>Assignment Description: {assignment_master.description}</p>
+						<p>Assignment Due Date: {assignment_master.due_date}</p>
 						<button
 							value={assignment_master.id}
 							onClick={() => handleDelete(assignment_master.id)}
 						>
-							Delete Assignment
+							Delete Assignment For All Students
 						</button>
 					</div>
 				);

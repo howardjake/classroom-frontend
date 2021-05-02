@@ -31,7 +31,7 @@ function GradeForm({
 
 	return (
 		<form onSubmit={handleSubmit}>
-			<label for="date_submitted">Date Submitted: </label>
+			<label for="date_submitted">Date Reviewed: </label>
 			<input
 				onChange={handleChange}
 				name="date_submitted"

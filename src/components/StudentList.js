@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 function StudentList({ students }) {
 	return (
 		<>
-			<h1> Students </h1>
+			<h1> Class Students: </h1>
 			<ul>
 				{students.map((student, idx) => {
 					return (

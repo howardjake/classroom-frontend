@@ -22,9 +22,12 @@ const Header = ({ user }) => (
 					</li>
 				</>
 			) : (
+				<>
 				<li className="auth-link" onClick={login}>
-					Login
+					 Welcome! Please click here to log in.
 				</li>
+				</>
+
 			)}
 		</ul>
 	</header>

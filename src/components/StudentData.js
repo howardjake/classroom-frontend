@@ -35,7 +35,7 @@ function StudentData({ student, assignments, handleUpdate }) {
 						<th>Assignemnt</th>
 						<th>Due Date</th>
 						<th>Resubmit</th>
-						<th>Date Submitted</th>
+						<th>Date Reviewed</th>
 						<th>Grade</th>
 						{editFormVisible ? <th>Edits</th> : null}
 					</tr>

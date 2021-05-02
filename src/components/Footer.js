@@ -3,7 +3,7 @@ function Footer(props) {
     return (
       <footer>
         <ul className="footer-info">
-          <li>Have a great day!</li>
+          <li>Have a Great Day!</li>
         </ul>
       </footer>
     );
