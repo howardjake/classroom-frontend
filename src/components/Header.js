@@ -9,16 +9,16 @@ const Header = ({ user }) => (
 			{user ? (
 				<>
 					<li className="Welcome_User">Welcome, {user.displayName}!</li>
-			<li>
-				<Link to="/">Home</Link>
-			</li>
+					<li>
+						<Link to="/">Home</Link>
+					</li>
 
 					<li>
 						<Link to="/assignments">Current Assignments</Link>
 					</li>
 
 					<li className="auth-link" onClick={logout}>
-						Logout
+						<Link to="/">Logout</Link>
 					</li>
 				</>
 			) : (
