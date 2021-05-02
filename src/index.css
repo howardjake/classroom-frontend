@@ -272,7 +272,10 @@ nav a {
 	border-style:solid;
 }
 
-  .card-body {
-	  display: inline-block;
+  h3 {
+	  text-align: center;
+	  display: flex;
+	  justify-content: center;
+
   }
 
