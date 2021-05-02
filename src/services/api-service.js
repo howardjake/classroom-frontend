@@ -4,8 +4,6 @@ const MASTERS_URL = "https://gradebook-backend.herokuapp.com/assignment_masters"
 const STUDENT_URL = "https://gradebook-backend.herokuapp.com/students";
 const DASHBOARD_URL = "https://gradebook-backend.herokuapp.com/dashboard";
 
-//const BASE_URL = `https://project4back.herokuapp.com/api/assignments`
-
 function fetchAssignments() {
 	return fetch(BASE_URL).then((res) => res.json());
 }
