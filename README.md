@@ -19,10 +19,9 @@ This single page app is designed for teachers to keep track of their stuents ass
 ## App Design
 
 * No user logged in: public/HomeScreen.png
-* Dashboard: public/Dashboard.png
-* Form: public/AssignmentForm.png
-* Edit Page: public/Student_Edit.png
-
+* Dashboard: [view here](https://github.com/howardjake/classroom-frontend/blob/master/public/Dashboard.png)
+* Form: [view here](https://github.com/howardjake/classroom-frontend/blob/master/public/AssignmentForm.png)
+* Edit Page: [view here](https://github.com/howardjake/classroom-frontend/blob/master/public/Student_Edit.png)
 ## Getting Started
 
 * [view here](https://react-mountains-log.netlify.app) to see the app.
