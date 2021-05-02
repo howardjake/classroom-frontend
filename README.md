@@ -25,7 +25,7 @@ This single page app is designed for teachers to keep track of their stuents ass
 * Edit Page: (https://github.com/howardjake/classroom-frontend/blob/master/public/Student_Edit.png)
 ## Getting Started
 
-* [view here](https://react-mountains-log.netlify.app) to see the app.
+* [view here](https://gradebookapp.netlify.app/) to see the app.
 * [view here] (<https://github.com/howardjake/classroom-backend>) to see the backend.
 * [view here] (<https://trello.com/b/TipPTJEB/project-4>) to see trello board.
 
