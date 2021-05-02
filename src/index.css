@@ -77,14 +77,14 @@ form {
 	padding: 0.1em;
 }
 
-form > label {
+form>label {
 	grid-column: labels;
 	grid-row: auto;
 }
 
-form > input,
-form > textarea,
-form > button {
+form>input,
+form>textarea,
+form>button {
 	grid-column: controls;
 	grid-row: auto;
 	border: none;
@@ -185,54 +185,54 @@ nav a {
 	justify-content: space-evenly;
 }
 
-  .student-num {
+.student-num {
 	width: 425px;
 	height: 225px;
 	background-color: #fff;
 	background: linear-gradient(#f8f8f8, #fff);
-	box-shadow: 0 8px 16px -8px rgba(0,0,0,0.4);
+	box-shadow: 0 8px 16px -8px rgba(0, 0, 0, 0.4);
 	border-radius: 6px;
 	overflow: hidden;
 	position: relative;
 	margin: 1.5rem;
 	display: flex;
 	justify-content: center;
-  }
+}
 
-  .grade-avg {
+.grade-avg {
 	width: 425px;
 	height: 225px;
 	background-color: #fff;
 	background: linear-gradient(#f8f8f8, #fff);
-	box-shadow: 0 8px 16px -8px rgba(0,0,0,0.4);
+	box-shadow: 0 8px 16px -8px rgba(0, 0, 0, 0.4);
 	border-radius: 6px;
 	overflow: hidden;
 	position: relative;
 	margin: 1.5rem;
 	display: flex;
 	justify-content: center;
-  }
+}
 
-  .upcoming {
+.upcoming {
 	width: 425px;
 	height: 225px;
 	background-color: #fff;
 	background: linear-gradient(#f8f8f8, #fff);
-	box-shadow: 0 8px 16px -8px rgba(0,0,0,0.4);
+	box-shadow: 0 8px 16px -8px rgba(0, 0, 0, 0.4);
 	border-radius: 6px;
 	overflow: hidden;
 	position: relative;
 	margin: 1.5rem;
 	display: flex;
 	justify-content: center;
-  }
+}
 
-  .course-card {
+.course-card {
 	width: 425px;
 	height: 225px;
 	background-color: #fff;
 	background: linear-gradient(#f8f8f8, #fff);
-	box-shadow: 0 8px 16px -8px rgba(0,0,0,0.4);
+	box-shadow: 0 8px 16px -8px rgba(0, 0, 0, 0.4);
 	border-radius: 6px;
 	overflow: hidden;
 	position: relative;
@@ -240,10 +240,10 @@ nav a {
 	display: flex;
 	justify-content: center;
 
-  }
+}
 
-  .assignmentmastersmapped {
-  	display: flex;
+.assignmentmastersmapped {
+	display: flex;
 	flex-direction: column;
 	align-items: center;
 	margin: 2%;
@@ -251,29 +251,31 @@ nav a {
 	border: #1e74cc;
 	border-style: solid;
 
-  }
+}
 
-  .Welcome_User {
-	  color: white
-  }
+.Welcome_User {
+	color: white
+}
 
-  .auth-link {
-	  color: white
-  }
+.auth-link {
+	color: white
+}
 
-  .Header_Message {
-	  color: white
-  }
+.Header_Message {
+	color: white
+}
 
 .FormEntry {
 	margin: 2%;
 	padding: 2%;
 	border: #1e74cc;
-	border-style:solid;
+	border-style: solid;
 }
 
+h3 {
+	text-align: center;
+	display: flex;
+	justify-content: center;
 
-  .card-body {
-	  display: inline-block;
-  }
+}
 
