@@ -152,6 +152,9 @@ body {
 .auth-link {
 	list-style: none;
 	display: flex;
+	cursor: pointer;
+}
+.auth-link:hover {
 }
 
 .login-prompt {
@@ -289,3 +292,17 @@ h3 {
 .Header_Message {
 	margin-top: 50px;
 }
+  }
+
+  .video_bg {
+	z-index: -1;
+	height: 100%;
+    
+    min-width: 100%;
+    min-height: 56.25vw; /* 100 * 9 / 16 */
+	position: fixed;
+    left: 50%; /* % of surrounding element */
+    top: 50%;
+    transform: translate(-50%, -50%); /* % of current element */
+}
+  

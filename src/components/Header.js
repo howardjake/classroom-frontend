@@ -6,12 +6,12 @@ const Header = ({ user }) => (
 		<h1 className="Header_Message">Gradebook App</h1>
 
 		<ul className="navigation">
-			<li>
-				<Link to="/">Home</Link>
-			</li>
 			{user ? (
 				<>
 					<li className="Welcome_User">Welcome, {user.displayName}!</li>
+			<li>
+				<Link to="/">Home</Link>
+			</li>
 
 					<li>
 						<Link to="/assignments">Current Assignments</Link>
