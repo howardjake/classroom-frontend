@@ -42,8 +42,12 @@ nav {
 	margin-left: 0.5rem;
 	height: 100vh;
 	background: #1e74cc;
+<<<<<<< HEAD
 	overflow: scroll;
 	scroll-behavior: smooth;
+=======
+	overflow-y: auto;
+>>>>>>> 4fcfe8c8ff99e3c322835a41d70be0ee6a8e58bf
 }
 
 .img {
