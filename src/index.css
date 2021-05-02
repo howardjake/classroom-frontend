@@ -9,7 +9,8 @@
 }
 
 body {
-	font-family: "Playfair Display", serif;
+	font-family: 'Play', sans-serif;
+	margin: auto;
 }
 
 h1 {
@@ -60,6 +61,7 @@ footer {
 	background-color: #142e4f;
 	display: table;
 	text-align: center;
+	color: #fff;
 }
 
 .notice {
@@ -228,7 +230,7 @@ nav a {
   }
 
   .course-card {
-	width: 425px;
+	width: 450px;
 	height: 225px;
 	background-color: #fff;
 	background: linear-gradient(#f8f8f8, #fff);
@@ -237,9 +239,6 @@ nav a {
 	overflow: hidden;
 	position: relative;
 	margin: 1.5rem;
-	display: flex;
-	justify-content: center;
-
   }
 
   .assignmentmastersmapped {
@@ -272,10 +271,21 @@ nav a {
 	border-style:solid;
 }
 
-  h3 {
+h3 {
 	  text-align: center;
 	  display: flex;
 	  justify-content: center;
+	  margin-top: 50px;
+}
 
-  }
+.card-body {
+	  display: flex;
+	  justify-content: center;
+	  color: #142e4f;
+	  font-size: 15px;
+	  font-family: 'Righteous', cursive;  
+	  }
 
+.Header_Message {
+	margin-top: 50px;
+}
