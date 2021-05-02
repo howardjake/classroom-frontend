@@ -294,3 +294,16 @@ nav a {
     transform: translate(-50%, -50%); /* % of current element */
 }
   
+.welcome_card {
+	background-color: #f8f8f8b6;
+	
+	padding: 30px;
+
+}
+
+.hero_name {
+	position: absolute;
+	background-color: #ffffffef;
+	border: #1e74cc solid 3px;
+	padding: 0.2vw;
+}
