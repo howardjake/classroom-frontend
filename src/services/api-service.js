@@ -1,14 +1,10 @@
-//Daniels Notice Lab
-
 // TODO: eventually change this to heroku
 const BASE_URL = "http://localhost:3000/assignments";
 const MASTERS_URL = "http://localhost:3000/assignment_masters";
 const STUDENT_URL = "http://localhost:3000/students";
-const DASHBOARD_URL = "http://localhost:3000/dashboard"
+const DASHBOARD_URL = "http://localhost:3000/dashboard";
 
 //const BASE_URL = `https://project4back.herokuapp.com/api/assignments`
-
-
 
 function fetchAssignments() {
 	return fetch(BASE_URL).then((res) => res.json());
@@ -39,13 +35,13 @@ function deleteAssignmentMasters(id) {
 	}).then((res) => res.json());
 }
 
-function updateAssignment({ id, grade }) {
+function updateAssignment({ id, grade, date_submitted, resubmit }) {
 	return fetch(`${BASE_URL}/${id}`, {
 		method: "PUT",
 		headers: {
 			"Content-type": "Application/json",
 		},
-		body: JSON.stringify({ grade }),
+		body: JSON.stringify({ grade, date_submitted, resubmit }),
 	}).then((res) => res.json());
 }
 function updateMaster({ id, name, description, dueDate }) {
