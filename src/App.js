@@ -29,7 +29,7 @@ function App() {
 	const [assignment_mastersState, setAssignment_MastersState] = useState({
 		assignment_masters: [],
 	});
-	const [dashboardState, setDashboardState] = useState({ dashboard: null });
+	const [dashboardState, setDashboardState] = useState({ dashboard: {} });
 
 	useEffect(() => {
 		async function getAssignments() {

@@ -1,5 +1,9 @@
 function Dashboard({ dashboardState, students }) {
+	let schedule  = dashboardState.schedule
+
 	return (
+		<>
+		{dashboardState.name === "Computer Science" ?
 		<>
 			<div className="card-container-one">
 				<div className="course-card">
@@ -13,9 +17,7 @@ function Dashboard({ dashboardState, students }) {
 				<div className="course-card">
 					<h3>Course Schedule</h3>
 					<p className="card-body">
-						{dashboardState.schedule.map((item) => (
-							<div>{item}</div>
-						))}
+						{schedule}
 					</p>
 				</div>
 
@@ -36,6 +38,7 @@ function Dashboard({ dashboardState, students }) {
 					</div>
 				</div>
 			</div>
+	</> : ""}
 		</>
 	);
 }
