@@ -18,9 +18,10 @@ This single page app is designed for teachers to keep track of their stuents ass
 
 ## App Design
 
-* No user logged in:
-* Table:
-* Form:
+* No user logged in: public/HomeScreen.png
+* Dashboard: public/Dashboard.png
+* Form: public/AssignmentForm.png
+* Edit Page: public/Student_Edit.png
 
 ## Getting Started
 
