@@ -10,11 +10,9 @@ return (
 		<div className="card-container-one"> 
 		<div className="course-card">
 			<h3>Course info</h3>
-			<br>
 			<p className="card-body">{dashboardState.name}</p>
 			<p className="card-body">Start Date: {dashboardState.start_date}</p>
 			<p className="card-body">End Date: {dashboardState.end_date}</p>
-			</br>
 		</div>
 
 		<div className="course-card">
