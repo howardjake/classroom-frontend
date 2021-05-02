@@ -1,5 +1,5 @@
 function Dashboard({ dashboardState, students }) {
-	let schedule  = dashboardState.schedule
+	let schedule  = dashboardState.schedule.replace('[',"").replace(']',"").split(',')
 
 	return (
 		<>
@@ -17,7 +17,11 @@ function Dashboard({ dashboardState, students }) {
 				<div className="course-card">
 					<h3>Course Schedule</h3>
 					<p className="card-body">
-						{schedule}
+
+						<ul>
+
+						{schedule.map(string => <li>{string}</li>)}
+						</ul>
 					</p>
 				</div>
 
