@@ -1,5 +1,5 @@
 function Dashboard({ dashboardState, students }) {
-	let schedule  = dashboardState.schedule.replace('[',"").replace(']',"").split(',')
+	let schedule = dashboardState.schedule?.replace('[',"").replace(']',"").split(',')
 
 	return (
 		<>
