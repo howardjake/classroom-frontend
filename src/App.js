@@ -4,7 +4,6 @@ import Header from "./components/Header";
 import Nav from "./components/Nav";
 import NavMaster from "./components/NavMaster.js";
 import { Route, Switch } from "react-router-dom";
-import AssignmentForm from "./Pages/AssignmentForm";
 import Student from "./Pages/Student";
 import { auth } from "./services/firebase";
 
@@ -30,7 +29,7 @@ function App() {
 	const [assignment_mastersState, setAssignment_MastersState] = useState({
 		assignment_masters: [],
 	});
-	const [dashboardState, setDashboardState] = useState({ dashboard: null });
+	const [dashboardState, setDashboardState] = useState({ dashboard: {} });
 
 	useEffect(() => {
 		async function getAssignments() {

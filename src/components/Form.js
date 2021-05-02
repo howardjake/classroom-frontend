@@ -1,9 +1,8 @@
-import { useState, useEffect } from "react";
+import { useState,  } from "react";
 import Input from "./Input.js";
 
 function Form(props) {
 	const [formState, setFormState] = useState({
-		//assignment_masters: [],
 		NewAssignmentMasters: {
 			name: "",
 			description: "",
@@ -11,7 +10,7 @@ function Form(props) {
 			course_id: 1,
 		},
 	});
-
+	//This will be reinstated later to edit the namerform
 	// useEffect(() => {
 	// 	if (props.editFormVisible) {
 	// 		const { name, description } = props.notice;
@@ -78,7 +77,7 @@ function Form(props) {
 			/>
 			<input
 				type="submit"
-				value={props.editFormVisible ? "Update" : "Add here"}
+				value={props.editFormVisible ? "Update" : "Add New Assignment Here"}
 			/>
 		</form>
 	);

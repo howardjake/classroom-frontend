@@ -11,18 +11,18 @@ function NavMaster({
 }) {
 	return (
 		<div>
+			<AssignmentForm
+				assignments={assignments}
+				handleAdd={handleAdd}
+				handleDelete={handleDelete}
+				handleUpdate={handleUpdate}
+			/>
 			<AssignmentMasterList
 				assignment_masters={assignment_masters}
 				handleMaster={handleMaster}
 				handleDelete={handleDelete}
 				handleUpdate={handleUpdate}
 				handleAdd={handleAdd}
-			/>
-			<AssignmentForm
-				assignments={assignments}
-				handleAdd={handleAdd}
-				handleDelete={handleDelete}
-				handleUpdate={handleUpdate}
 			/>
 		</div>
 	);

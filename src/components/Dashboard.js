@@ -1,48 +1,46 @@
-import { useState } from "react";
+function Dashboard({ dashboardState, students }) {
+	let schedule  = dashboardState.schedule
 
+	return (
+		<>
+		{dashboardState.name === "Computer Science" ?
+		<>
+			<div className="card-container-one">
+				<div className="course-card">
+					<h3> {dashboardState.name} </h3>
+					<p className="card-body">
+						Start Date: {dashboardState.start_date} <br />
+						End Date: {dashboardState.end_date}
+					</p>
+				</div>
 
-function Dashboard({dashboardState, students}) {
+				<div className="course-card">
+					<h3>Course Schedule</h3>
+					<p className="card-body">
+						{schedule}
+					</p>
+				</div>
 
-	
-return (
-	<>
+				<div className="course-card">
+					<h3>Number of Students </h3>
+					<p className="card-body">{dashboardState.number_of_students}</p>
+				</div>
 
-		<div className="card-container-one"> 
-		<div className="course-card">
-			<p>Course info</p>
-			<p className="card-body">{dashboardState.name}</p>
-			<p className="card-body">Start Date: {dashboardState.start_date}</p>
-			<p className="card-body">End Date: {dashboardState.end_date}</p>
-			<p className="card-body">Schedule: {dashboardState.schedule}</p>
-		</div>
+				<div className="card-container-two">
+					<div className="course-card">
+						<h3>Class Average </h3>
+						<p className="card-body">{dashboardState.class_average}</p>
+					</div>
 
-		<div className="student-num">
-			<p>Number of Students </p>
-			<p className="card-body">{dashboardState.number_of_students}</p>
-		</div>
-
-
-		<div className="card-container-two"> 
-	
-		<div className="grade-avg">
-			<p>Class Average </p>
-			<p className="card-body">{dashboardState.class_average}</p>
-		</div>
-
-
-
-		<div className="upcoming">
-			<p>Upcoming Assignments</p>
-			<p className="card-body">{dashboardState.assignments.join(', ')}</p>
-		</div>
-
-
-
-		</div>
-		</div>
-	</>
-	
-)};
-
+					<div className="course-card">
+						<h3>Upcoming Assignments</h3>
+						<p className="card-body">{dashboardState.assignments.join(", ")}</p>
+					</div>
+				</div>
+			</div>
+	</> : ""}
+		</>
+	);
+}
 
 export default Dashboard;

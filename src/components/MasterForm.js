@@ -1,6 +1,8 @@
+/*
+This will be reinstated afterwards to edit and upate the assignment_masters 
 import { useState } from "react";
 
-function MasterForm({ name, description, id, handleMaster, handleDelete, toggleForm }) {
+function MasterForm({ name, description, id, handleMaster, toggleForm }) {
 	const [formState, setFormState] = useState({
 		id: id,
 		name: name,
@@ -45,3 +47,4 @@ function MasterForm({ name, description, id, handleMaster, handleDelete, toggleF
 
 export default MasterForm;
 
+*/

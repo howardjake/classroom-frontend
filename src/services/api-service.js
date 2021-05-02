@@ -1,10 +1,10 @@
-//Daniels Notice Lab
-
 // TODO: eventually change this to heroku
 const BASE_URL = "https://gradebook-backend.herokuapp.com/assignments";
 const MASTERS_URL = "https://gradebook-backend.herokuapp.com/assignment_masters";
 const STUDENT_URL = "https://gradebook-backend.herokuapp.com/students";
-const DASHBOARD_URL = "https://gradebook-backend.herokuapp.com/dashboard"
+const DASHBOARD_URL = "https://gradebook-backend.herokuapp.com/dashboard";
+
+//const BASE_URL = `https://project4back.herokuapp.com/api/assignments`
 
 function fetchAssignments() {
 	return fetch(BASE_URL).then((res) => res.json());
@@ -35,13 +35,13 @@ function deleteAssignmentMasters(id) {
 	}).then((res) => res.json());
 }
 
-function updateAssignment({ id, grade }) {
+function updateAssignment({ id, grade, date_submitted, resubmit }) {
 	return fetch(`${BASE_URL}/${id}`, {
 		method: "PUT",
 		headers: {
 			"Content-type": "Application/json",
 		},
-		body: JSON.stringify({ grade }),
+		body: JSON.stringify({ grade, date_submitted, resubmit }),
 	}).then((res) => res.json());
 }
 function updateMaster({ id, name, description, dueDate }) {
