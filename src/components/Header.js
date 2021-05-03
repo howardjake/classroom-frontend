@@ -14,7 +14,7 @@ const Header = ({ user }) => (
 					</li>
 
 					<li>
-						<Link to="/assignments">Current Assignments</Link>
+						<Link to="/assignments">Assignments</Link>
 					</li>
 
 					<li className="auth-link" onClick={logout}>
@@ -24,7 +24,7 @@ const Header = ({ user }) => (
 			) : (
 				<>
 				<li className="auth-link" onClick={login}>
-					 Welcome! Please click here to log in.
+					 Welcome! Please click here to login.
 				</li>
 				</>
 

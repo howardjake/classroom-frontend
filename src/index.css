@@ -23,11 +23,11 @@ h1 {
 		"nav content"
 		"footer footer";
 	grid-template-columns: 30% 70%;
-	grid-template-rows: auto auto auto;
-	grid-gap: 2%;
+	grid-template-rows: 10vh 80vh;
 	min-height: 100%;
 	min-width: 100%;
 	margin: 0;
+	padding: 0;
 }
 
 header {
@@ -37,11 +37,12 @@ header {
 
 nav {
 	grid-area: nav;
-	margin-left: 0.5rem;
-	height: 100%;
+	margin-left: 0;
 	width: 100%;
 	background: #1e74cc;
-	overflow: hidden;
+	overflow: scroll;
+	scroll-behavior: smooth;
+	overflow-y: hidden;
 }
 
 .img {
@@ -90,69 +91,43 @@ body {
 	margin: 0;
 }
 
-@media (max-width: 768px) {
-	.container {
-		grid-template-areas:
-			"header"
-			"nav"
-			"content"
-			"footer";
-
-		grid-template-columns: 1fr;
-		grid-template-rows:
-			auto
-			/* Header */
-			minmax(200px, auto)
-			/* Nav */
-			1fr
-			/* Content */
-			minmax(75px, auto)
-			/* Sidebar */
-			auto;
-		/* Footer */
-	}
-
-	nav{
-		margin: 0;
-	}
-
-	nav {
-		padding: 20px 20%;
-	}
-}
-
-
 .navigation {
+	position: relative;
 	list-style: none;
 	display: flex;
 	float: right;
-	font-size: 1.2rem;
-}
-
-
-.Welcome_User {
-	color: white;
-	
+	font-size: 2.2vh;
+	top: 1vh;
+	margin: 0 2vw 2vw 0;
 }
 
 .auth-link {
-	color: white
-}
-
-.Header_Message {
 	color: white
 }
 
 .navigation li {
-	width: 50%;
+	margin: 0 1vw;
 	display: flex;
-	text-align: center;
 	justify-content: space-evenly;
+}
+
+.Welcome_User {
+	color: white;
+	bottom: 30px;
+	width: auto;
+}
+
+.Header_Message {
+	color: white;
+	font-size: 4vh;	
 }
 
 .auth-link {
 	list-style: none;
 	display: flex;
+}
+.auth-link:hover {
+	cursor: pointer;
 }
 
 .login-prompt {
@@ -174,10 +149,14 @@ nav a {
 
 
 .card-container-one {
-	margin: auto;
+	margin: 0;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-evenly;
+	height: 100%;
+	overflow: scroll;
+	scroll-behavior: smooth;
+	overflow-x: hidden;
 }
 
 .card-container-two {
@@ -229,9 +208,12 @@ nav a {
 	justify-content: center;
 }
 
+.student_data {
+	margin: 0 2vw;
+}
 .course-card {
 	width: 100%;
-	height: 100%;
+	height: auto;
 	min-width: 500px;
 	min-height: 200px; 
 	background-color: #fff;
@@ -245,8 +227,9 @@ nav a {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	padding: 3%;
-	font-size: 1.2rem;
+	padding: 0;
+	font-size: 1rem;
+	
 
 }
 
@@ -298,28 +281,110 @@ h3 {
 	display: flex;
 	width: 100%;
 	font-size: 1.3rem;
-	padding: 1%;
-	margin: 1%;
+	padding: 0;
+	margin: 1% 0;
 }
 
 footer {
-	grid-area: footer;
 	background-color: #142e4f;
-	display: table;
 	text-align: center;
 	width: 100%;
 	color: white;
+	position: absolute;
+	bottom: 0;
+	height: 10vh;
 }
 
 .StudentList {
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
 	align-items: left;
 	font-size: 1.3rem;
+	overflow: scroll;
+	scroll-behavior: smooth;
+	overflow-x: hidden;
 }
 
 .AddAssignment {
 	border-style: solid;
 }
 
+.video_bg {
+	z-index: -1;
+	height: 100%;
+
+	min-width: 100%;
+	min-height: 56.25vw; /* 100 * 9 / 16 */
+	position: fixed;
+	left: 50%; /* % of surrounding element */
+	top: 50%;
+	transform: translate(-50%, -50%); /* % of current element */
+}
+  
+.welcome_card {
+	background-color: #f8f8f8b6;
+	
+	padding: 30px;
+
+}
+
+.hero_name {
+	position: absolute;
+	background-color: #ffffffef;
+	border: #1e74cc solid 3px;
+	padding: 0.2vw;
+}
+
+.asignment_data {
+	grid-area: content;
+	margin-left: 0;
+	height: auto;
+	overflow: scroll;
+	scroll-behavior: smooth;
+	overflow-x: hidden;
+}
+@media (max-width: 768px) {
+	.container {
+		grid-template-areas:
+			"header"
+			"nav"
+			"content"
+			"footer";
+
+		grid-template-columns: 1fr;
+		grid-template-rows:
+			auto
+			/* Header */
+			minmax(200px, auto)
+			/* Nav */
+			1fr
+			/* Content */
+			minmax(75px, auto)
+			/* Sidebar */
+			auto;
+		/* Footer */
+	}
+
+	nav{
+		margin: 0;
+		height: 50vh;
+	}
+
+	nav {
+		padding: 20px 20%;
+	}
+
+	footer {
+	position: relative;
+	bottom: auto;
+	flex-direction: column;
+	}
+
+	.asignment_data {
+	grid-area: content;
+	margin-left: 0;
+	height: auto;
+	overflow: auto;
+	scroll-behavior: smooth;
+}
+}

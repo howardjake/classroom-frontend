@@ -187,6 +187,7 @@ function App() {
 									/>
 								)}
 							/>
+						<Footer />
 						</>
 					) : (
 						<Route
@@ -197,7 +198,6 @@ function App() {
 					)}
 				</Switch>
 
-				<Footer />
 			</div>
 		</div>
 	);

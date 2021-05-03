@@ -5,6 +5,7 @@ function Dashboard({ dashboardState, students }) {
 		<>
 		{dashboardState.name === "Computer Science" ?
 		<>
+
 			<div className="card-container-one">
 				<div className="course-card">
 					<h3> {dashboardState.name} </h3>
@@ -29,7 +30,7 @@ function Dashboard({ dashboardState, students }) {
 					<p className="card-body">{dashboardState.number_of_students}</p>
 				</div>
 
-				<div className="card-container-two">
+				
 					<div className="course-card">
 						<h3>Class Average: </h3>
 						<p className="card-body">{dashboardState.class_average}</p>
@@ -37,9 +38,9 @@ function Dashboard({ dashboardState, students }) {
 
 					<div className="course-card">
 						<h3>Upcoming Assignments:</h3>
-						<p className="card-body-upcoming">{dashboardState.assignments.join(", ")}</p>
+						<p className="card-body">{dashboardState.assignments.join(", ")}</p>
 					</div>
-				</div>
+				
 			</div>
 	</> : ""}
 		</>

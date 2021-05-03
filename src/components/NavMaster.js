@@ -10,7 +10,7 @@ function NavMaster({
 	handleUpdate,
 }) {
 	return (
-		<div>
+		<div className="asignment_data">
 			<AssignmentForm
 				assignments={assignments}
 				handleAdd={handleAdd}

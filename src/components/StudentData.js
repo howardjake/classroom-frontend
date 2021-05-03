@@ -23,7 +23,7 @@ function StudentData({ student, assignments, handleUpdate }) {
 	}
 
 	return (
-		<div>
+		<div className="student_data">
 			<h2>{student?.name} </h2>
 			<span>Grade Average: {gradeLetter(average)}</span>
 			<p>
